@@ -1,0 +1,187 @@
+{
+  "facultyAdvisors": [
+    {
+      "id": 1,
+      "name": "Dr. Priya Sharma",
+      "position": "Faculty Advisor",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
+      "message": "The Eco Club represents our commitment to creating a sustainable future. Through student-led initiatives, we aim to foster environmental consciousness and drive meaningful change in our community."
+    }
+  ],
+  "directors": [
+    {
+      "id": 1,
+      "name": "Dr. Rajesh Kumar",
+      "position": "Director",
+      "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
+      "message": "Our vision is to make NIT Silchar a model green campus that inspires other institutions to adopt sustainable practices."
+    }
+  ],
+  "deans": [
+    {
+      "id": 1,
+      "name": "Dr. Anjali Mehta",
+      "position": "Dean of Student Affairs",
+      "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
+      "message": "The dedication and passion of our Eco Club members is truly inspiring. They are the change-makers our world needs."
+    }
+  ],
+  "committees": {
+    "2024": {
+      "president": {
+        "name": "Arjun Singh",
+        "position": "President",
+        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "secretary": {
+        "name": "Meera Patel",
+        "position": "Secretary",
+        "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "treasurer": {
+        "name": "Rohit Verma",
+        "position": "Treasurer",
+        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "executives": [
+        {
+          "name": "Sneha Reddy",
+          "position": "Events Coordinator",
+          "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        },
+        {
+          "name": "Karan Malhotra",
+          "position": "Technical Lead",
+          "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        },
+        {
+          "name": "Priya Das",
+          "position": "Content Manager",
+          "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        },
+        {
+          "name": "Amit Kumar",
+          "position": "Outreach Lead",
+          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        }
+      ]
+    },
+    "2023": {
+      "president": {
+        "name": "Neha Sharma",
+        "position": "President",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "secretary": {
+        "name": "Vikram Singh",
+        "position": "Secretary",
+        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "treasurer": {
+        "name": "Ananya Roy",
+        "position": "Treasurer",
+        "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "executives": [
+        {
+          "name": "Rahul Das",
+          "position": "Events Coordinator",
+          "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        },
+        {
+          "name": "Pooja Verma",
+          "position": "Technical Lead",
+          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        }
+      ]
+    },
+    "2022": {
+      "president": {
+        "name": "Rohan Kumar",
+        "position": "President",
+        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "secretary": {
+        "name": "Kavita Singh",
+        "position": "Secretary",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "treasurer": {
+        "name": "Sanjay Patel",
+        "position": "Treasurer",
+        "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
+        "social": {
+          "instagram": "https://instagram.com",
+          "linkedin": "https://linkedin.com"
+        }
+      },
+      "executives": [
+        {
+          "name": "Divya Sharma",
+          "position": "Events Coordinator",
+          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
+          "social": {
+            "instagram": "https://instagram.com",
+            "linkedin": "https://linkedin.com"
+          }
+        }
+      ]
+    }
+  }
+}
