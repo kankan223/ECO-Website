@@ -1,74 +1,14 @@
 [
   {
     "id": 1,
-    "src": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=600&fit=crop",
+    "src": "/gallery/Plantation.jpeg",
     "alt": "Tree plantation activity",
     "category": "Plantation"
   },
   {
     "id": 2,
-    "src": "https://images.unsplash.com/photo-1416879241372-5961d01131e3?w=600&h=400&fit=crop",
-    "alt": "Campus cleaning drive",
-    "category": "Cleaning"
-  },
-  {
-    "id": 3,
-    "src": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=600&h=500&fit=crop",
-    "alt": "Solar panel installation",
-    "category": "Workshops"
-  },
-  {
-    "id": 4,
-    "src": "https://images.unsplash.com/photo-1532992512062-4d3a0f5c1c0a?w=600&h=450&fit=crop",
-    "alt": "Waste segregation workshop",
-    "category": "Workshops"
-  },
-  {
-    "id": 5,
-    "src": "https://images.unsplash.com/photo-1527219521225-1b6e2e9e1a0a?w=600&h=550&fit=crop",
-    "alt": "Team meeting",
-    "category": "Meetings"
-  },
-  {
-    "id": 6,
-    "src": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop",
-    "alt": "Hackathon event",
-    "category": "Competitions"
-  },
-  {
-    "id": 7,
-    "src": "https://images.unsplash.com/photo-1441974724843-83b75900f2e1?w=600&h=600&fit=crop",
-    "alt": "Guest lecture session",
-    "category": "Meetings"
-  },
-  {
-    "id": 8,
-    "src": "https://images.unsplash.com/photo-1501555088652-66efb10c3269?w=600&h=450&fit=crop",
-    "alt": "Eco quiz competition",
-    "category": "Competitions"
-  },
-  {
-    "id": 9,
-    "src": "https://images.unsplash.com/photo-1526401485004-4f6b3b3b3b3b?w=600&h=500&fit=crop",
-    "alt": "Plant care activity",
-    "category": "Plantation"
-  },
-  {
-    "id": 10,
-    "src": "https://images.unsplash.com/photo-1558911540-6a6b09b5a0a1?w=600&h=400&fit=crop",
-    "alt": "Electric vehicle promotion",
-    "category": "Workshops"
-  },
-  {
-    "id": 11,
-    "src": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=450&fit=crop",
-    "alt": "Environmental awareness camp",
-    "category": "Cleaning"
-  },
-  {
-    "id": 12,
-    "src": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=600&h=550&fit=crop",
-    "alt": "Renewable energy workshop",
+    "src": "/gallery/Expert.jpeg",
+    "alt": "Expert Talk Session",
     "category": "Workshops"
   }
 ]

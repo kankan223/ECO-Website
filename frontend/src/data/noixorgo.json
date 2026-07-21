@@ -1,59 +1,18 @@
 {
   "featured": {
-    "title": "Eco Club Monthly Newsletter - June 2025",
-    "description": "Stay updated with our latest environmental initiatives, upcoming events, and success stories from our green journey.",
-    "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=500&fit=crop",
-    "date": "June 1, 2025"
+    "title": "Noixorgo- July 2026",
+    "description": "A weekly feed on nature.",
+    "image": "/gallery/noixorgo.jpeg",
+    "date": "12 July, 2026"
   },
   "articles": [
     {
       "id": 1,
       "title": "Green Campus Initiative: A Year in Review",
       "excerpt": "Looking back at our achievements in making NIT Silchar a more sustainable campus.",
-      "date": "May 25, 2025",
+      "date": "May 25, 2026",
       "category": "Sustainability",
       "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop"
-    },
-    {
-      "id": 2,
-      "title": "Student Spotlight: Young Environmentalists",
-      "excerpt": "Meet the students who are making a difference through their eco-friendly innovations.",
-      "date": "May 20, 2025",
-      "category": "Student Stories",
-      "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop"
-    },
-    {
-      "id": 3,
-      "title": "Renewable Energy: The Future is Here",
-      "excerpt": "How solar power is transforming our campus energy consumption.",
-      "date": "May 15, 2025",
-      "category": "Technology",
-      "image": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=600&h=400&fit=crop"
-    },
-    {
-      "id": 4,
-      "title": "Waste to Wealth: Our Recycling Success",
-      "excerpt": "Transforming campus waste into valuable resources through innovative programs.",
-      "date": "May 10, 2025",
-      "category": "Waste Management",
-      "image": "https://images.unsplash.com/photo-1532992512062-4d3a0f5c1c0a?w=600&h=400&fit=crop"
-    },
-    {
-      "id": 5,
-      "title": "Biodiversity Watch: Campus Flora",
-      "excerpt": "Exploring the rich biodiversity of plants on our campus.",
-      "date": "May 5, 2025",
-      "category": "Conservation",
-      "image": "https://images.unsplash.com/photo-1416879241372-5961d01131e3?w=600&h=400&fit=crop"
-    },
-    {
-      "id": 6,
-      "title": "Water Conservation Techniques",
-      "excerpt": "Simple methods to save water in our daily campus life.",
-      "date": "April 28, 2025",
-      "category": "Water",
-      "image": "https://images.unsplash.com/photo-1527219521225-1b6e2e9e1a0a?w=600&h=400&fit=crop"
-    }
-  ],
+    }],
   "categories": ["All", "Sustainability", "Technology", "Conservation", "Waste Management", "Water", "Student Stories"]
 }
