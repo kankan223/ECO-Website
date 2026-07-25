@@ -7,50 +7,5 @@
     "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop",
     "author": "Eco Club Team",
     "category": "Sustainability"
-  },
-  {
-    "id": 2,
-    "title": "The Importance of Biodiversity Conservation",
-    "excerpt": "Understanding why biodiversity matters and what we can do to protect the rich flora and fauna around us.",
-    "date": "April 28, 2025",
-    "image": "https://images.unsplash.com/photo-1441974724843-83b75900f2e1?w=600&h=400&fit=crop",
-    "author": "Dr. Priya Sharma",
-    "category": "Conservation"
-  },
-  {
-    "id": 3,
-    "title": "Climate Change: A Student's Perspective",
-    "excerpt": "Young minds share their thoughts on climate action and the role of educational institutions in creating awareness.",
-    "date": "April 10, 2025",
-    "image": "https://images.unsplash.com/photo-1501555088652-66efb10c3269?w=600&h=400&fit=crop",
-    "author": "Student Council",
-    "category": "Climate"
-  },
-  {
-    "id": 4,
-    "title": "Green Technology Innovations",
-    "excerpt": "Latest breakthroughs in renewable energy and sustainable technology that are changing the world.",
-    "date": "March 22, 2025",
-    "image": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=600&h=400&fit=crop",
-    "author": "Tech Team",
-    "category": "Technology"
-  },
-  {
-    "id": 5,
-    "title": "Waste to Wealth: Circular Economy",
-    "excerpt": "How waste management and circular economy principles can transform our approach to consumption.",
-    "date": "March 5, 2025",
-    "image": "https://images.unsplash.com/photo-1532992512062-4d3a0f5c1c0a?w=600&h=400&fit=crop",
-    "author": "Eco Club Team",
-    "category": "Waste Management"
-  },
-  {
-    "id": 6,
-    "title": "Water Conservation in Urban Areas",
-    "excerpt": "Practical strategies for conserving water in urban environments and reducing our water footprint.",
-    "date": "February 18, 2025",
-    "image": "https://images.unsplash.com/photo-1527219521225-1b6e2e9e1a0a?w=600&h=400&fit=crop",
-    "author": "Dr. Rajesh Kumar",
-    "category": "Water"
   }
 ]

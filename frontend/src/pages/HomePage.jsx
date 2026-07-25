@@ -25,12 +25,12 @@ const heroSlides = [
     subtitle: 'Join the green revolution at NIT Silchar',
   },
   {
-    image: 'https://images.unsplash.com/photo-1416879241372-5961d01131e3?w=1920&h=1080&fit=crop',
+    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&h=1080&fit=crop',
     title: 'Building a Sustainable Future',
     subtitle: 'Together, we can make a difference',
   },
   {
-    image: 'https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=1920&h=1080&fit=crop',
+    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&h=1080&fit=crop',
     title: 'Green Initiatives for a Better Tomorrow',
     subtitle: 'Innovation meets environmental responsibility',
   },
@@ -72,64 +72,58 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
-      {/* Hero Section */}
-      <section className="relative h-[85vh]">
-        <Swiper
-          modules={[Autoplay, Navigation, Pagination, EffectFade]}
-          effect="fade"
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          navigation
-          pagination={{ clickable: true }}
-          loop
-          className="h-full"
-        >
-          {heroSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative h-full">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white max-w-4xl px-6">
-                    <motion.h1
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
-                      className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
-                    >
-                      {slide.title}
-                    </motion.h1>
-                    <motion.p
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4 }}
-                      className="text-xl md:text-2xl mb-8"
-                    >
-                      {slide.subtitle}
-                    </motion.p>
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                      className="flex flex-col sm:flex-row gap-4 justify-center"
-                    >
-                      <Button variant="primary" className="text-lg px-8 py-4">
-                        Explore
-                      </Button>
-                      <Button variant="outline" className="text-lg px-8 py-4">
-                        Learn More
-                      </Button>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+     {/* Hero Section */}
+<section className="relative h-[85vh]">
+  <Swiper
+    modules={[Autoplay, Navigation, Pagination, EffectFade]}
+    effect="fade"
+    fadeEffect={{ crossFade: true }}
+    speed={1200}
+    autoplay={{
+      delay: 5000,
+      disableOnInteraction: false,
+    }}
+    navigation
+    pagination={{ clickable: true }}
+    loop
+    className="h-full"
+  >
+    {heroSlides.map((slide, index) => (
+      <SwiperSlide key={index}>
+        <div className="relative h-full">
+          {/* Background Image */}
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="w-full h-full object-cover"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+
+          {/* Content */}
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+              className="text-center text-white max-w-5xl"
+            >
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                {slide.title}
+              </h1>
+
+              <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
+                {slide.subtitle}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
 
       {/* About Section */}
       <section ref={aboutRef} className="py-20 px-6 lg:px-8 bg-white">
@@ -188,45 +182,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Green Initiatives Section */}
-      <section ref={initiativesRef} className="py-20 px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitle
-            title="Green Initiatives"
-            subtitle="Our ongoing projects for a sustainable campus"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={initiativesInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-12 space-y-12"
-          >
-            {greenInitiatives.map((initiative, index) => (
-              <div
-                key={initiative.id}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
-              >
-                <div className="lg:w-1/2">
-                  <img
-                    src={initiative.image}
-                    alt={initiative.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-soft transition-transform duration-500 hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="lg:w-1/2">
-                  <h3 className="text-3xl font-bold text-[#222] mb-4">{initiative.title}</h3>
-                  <p className="text-muted mb-6">{initiative.description}</p>
-                  <Button variant="secondary">
-                    Learn More
-                    <FiArrowRight className="ml-2" />
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Upcoming Events Section */}
       <section ref={eventsRef} className="py-20 px-6 lg:px-8">

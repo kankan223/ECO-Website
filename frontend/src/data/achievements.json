@@ -1,38 +1,13 @@
 [
   {
     "id": 1,
-    "title": "Best Green Campus Award",
-    "description": "Recognized as the best green campus initiative among all NITs for our sustainable practices and environmental conservation efforts.",
-    "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop"
+    "title": "191th Most Sustainable University in UI Green Metric,2025",
+    "description": "We are now the 5th most sustainable university in India and 2nd in the country in the category of Energy and Climate change.",
+    "image": "/gallery/191.jpeg"
   },
   {
     "id": 2,
     "title": "Tree Plantation Drive",
-    "description": "Successfully planted over 5,000 saplings across the campus and surrounding areas in our annual tree plantation drive.",
-    "image": "https://images.unsplash.com/photo-1416879241372-5961d01131e3?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Solar Power Initiative",
-    "description": "Installed solar panels across campus generating 200kW of clean renewable energy, reducing carbon footprint by 40%.",
-    "image": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Waste Management Program",
-    "description": "Implemented a comprehensive waste segregation and recycling program achieving 85% waste diversion from landfills.",
-    "image": "https://images.unsplash.com/photo-1532992512062-4d3a0f5c1c0a?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 5,
-    "title": "Water Conservation Project",
-    "description": "Rainwater harvesting system installed across campus saving over 10,000 liters of water annually.",
-    "image": "https://images.unsplash.com/photo-1527219521225-1b6e2e9e1a0a?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 6,
-    "title": "Eco-Friendly Transportation",
-    "description": "Promoting electric vehicles and bicycles on campus with dedicated charging stations and bike lanes.",
-    "image": "https://images.unsplash.com/photo-1558911540-6a6b09b5a0a1?w=400&h=300&fit=crop"
-  }
-]
+    "description": "Successfully planted over many saplings across the campus and surrounding areas in our tree plantation drives.",
+    "image": "/gallery/tree plant.jpeg"
+  }]

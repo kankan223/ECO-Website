@@ -1,187 +1,272 @@
 {
-  "facultyAdvisors": [
-    {
-      "id": 1,
-      "name": "Dr. Priya Sharma",
-      "position": "Faculty Advisor",
-      "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
-      "message": "The Eco Club represents our commitment to creating a sustainable future. Through student-led initiatives, we aim to foster environmental consciousness and drive meaningful change in our community."
-    }
-  ],
-  "directors": [
-    {
-      "id": 1,
-      "name": "Dr. Rajesh Kumar",
-      "position": "Director",
-      "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
-      "message": "Our vision is to make NIT Silchar a model green campus that inspires other institutions to adopt sustainable practices."
-    }
-  ],
-  "deans": [
-    {
-      "id": 1,
-      "name": "Dr. Anjali Mehta",
-      "position": "Dean of Student Affairs",
-      "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
-      "message": "The dedication and passion of our Eco Club members is truly inspiring. They are the change-makers our world needs."
-    }
-  ],
   "committees": {
+    "2025": {
+      "facultyAdvisor": [
+        {
+          "name": "Dr. Priya Sharma",
+          "image": "/team/priya.jpg"
+        }
+      ],
+
+      "secretary": [
+        {
+          "name": "Rajdeep Sarmah",
+          "image": "/team/meera.jpg"
+        }
+      ],
+
+      "seniorExecutives": [
+        {
+          "name": "Chayanka Bharadwaj",
+          "image": "/team/Chayanka.jpg"
+        },
+        {
+          "name": "Bitopan Nath",
+          "image": "/team/Bitopan.jpg"
+        },
+        {
+          "name": "Rupam Sutradhar",
+          "image": "/team/Rupam.jpg"
+        },
+        {
+          "name": "Tanmay Parasar",
+          "image": "/team/Tanmay.jpg"
+        },
+        {
+          "name": "Shreyas Chakraborty",
+          "image": "/team/Shreyas.jpeg"
+        },
+        {
+          "name": "Kankana Das",
+          "image": "/team/Kankana.jpg"
+        },
+        {
+          "name": "Mourjya Mohin Gogoi",
+          "image": "/team/Mourjya.JPG"
+        },
+        {
+          "name": "Nihar Das",
+          "image": "/team/nihar das.jpg"
+        },
+        {
+          "name": "Manisha Saloi",
+          "image": "/team/Manisha.jpg"
+        },
+        {
+          "name": "Kuldip Kalita",
+          "image": "/team/Kuldip.jpg"
+        },
+        {
+          "name": "Gurupada Barada",
+          "image": "/team/Gurupada.jpg"
+        },
+        {
+          "name": "Namrata Nayak",
+          "image": "/team/Namrata.jpg"
+        },
+        {
+          "name": "Bhabana Das",
+          "image": "/team/bhabana das.jpeg"
+        },
+        {
+          "name": "Uddipta Gautam",
+          "image": "/team/UGB.jpg"
+        },
+        {
+          "name": "Pranjit Saikia",
+          "image": "/team/Pranjit.jpg"
+        },
+        {
+          "name": "Saranga Pratim Bhuyan",
+          "image": "/team/Saranga.jpg"
+        },
+        {
+          "name": "Priyanuj Kashyap",
+          "image": "/team/Priyanuj.jpg"
+        },
+        {
+          "name": "Ankit Kashyap",
+          "image": "/team/Ankit.webp"
+        },
+        {
+          "name": "Ankita Devi",
+          "image": "/team/Ankita.jpg"
+        },
+        {
+          "name": "Sabera Rahman",
+          "image": "/team/Sabera.jpg"
+        },
+        {
+          "name": "Prasurjya Shyam",
+          "image": "/team/Cheng.jpg"
+        },
+        {
+          "name": "Probin Dhakal",
+          "image": "/team/Probin.jpg"
+        },
+        {
+          "name": "Sharmistha Bhattacharjee",
+          "image": "/team/Sharmistha.jpg"
+        },
+        {
+          "name": "Bisal Prasad",
+          "image": "/team/Bisal.png"
+        },
+        {
+          "name": "Chinmoy Dutta",
+          "image": "/team/Chinmoy.jpg"
+        },
+        {
+          "name": "Gyanjyoti Das",
+          "image": "/team/Gyanjyoti.jpg"
+        },
+        {
+          "name": "Anwesha Chetia",
+          "image": "/team/Anwesha.jpg"
+        }
+
+      ],
+
+      "developers": [
+         {
+          "name": "Probin Dhakal",
+          "image": "/team/Probin.jpg"
+        },
+        {
+          "name": "Bisal Prasad",
+          "image": "/team/Bisal.png"
+        },
+        {
+          "name": "Chinmoy Dutta",
+          "image": "/team/Chinmoy.jpg"
+        },
+        {
+          "name": "Ahiron Sharma",
+          "image": "/team/Ahiron.png"
+        },
+        {
+          "name": "Jyotishmita Borah",
+          "image": "/team/jyoti.jpeg"
+        }
+      ],
+      "juniorExecutives": [
+  {
+    "name": "Dwipanta Bipra Hazarika"
+  },
+  {
+    "name": "Bishal Thakuria"
+  },
+  {
+    "name": "Nibir Baidya"
+  },
+  {
+    "name": "Jugabrat Saikia"
+  },
+  {
+    "name": "Saurav Bhattacharjee"
+  },
+  {
+    "name": "Mridu Paban Bora"
+  },
+  {
+    "name": "Parag Kumar"
+  },
+  {
+    "name": "Ujjal Das"
+  },
+  {
+    "name": "Anwesha Boruah"
+  },
+  {
+    "name": "Tilutpal Borpatra"
+  },
+  {
+    "name": "Rishika Chakravarty"
+  },
+  {
+    "name": "Bidisha Kakoti"
+  },
+  {
+    "name": "Ishan Baruah"
+  },
+  {
+    "name": "Ahiron Sharma"
+  },
+  {
+    "name": "Himangshu Das"
+  },
+  {
+    "name": "Pritom Baishya"
+  },
+  {
+    "name": "Akash Deep Bhuyan"
+  },
+  {
+    "name": "Jyotishmita Borah"
+  },
+  {
+    "name": "Swagata Bhattacharjee"
+  },
+  {
+    "name": "Shreya Dutta"
+  },
+  {
+    "name": "Bhaskarjyoti Baruah"
+  },
+  {
+    "name": "Mrigakhi Kashyap"
+  },
+  {
+    "name": "Irfan Aniruz Zaman"
+  },
+  {
+    "name": "Jagadish Deuri"
+  },
+  {
+    "name": "Kumar Deep Kashyap"
+  },
+  {
+    "name": "Gitertha Deka"
+  },
+  {
+    "name": "Dharitri Deka"
+  },
+  {
+    "name": "Shaswat Shivam Nath"
+  },
+  {
+    "name": "Chetna R"
+  },
+  {
+    "name": "Amandeep Saikia"
+  },
+  {
+    "name": "Mrityujoy Saikia"
+  },
+  {
+    "name": "Debangshu Mounas"
+  },
+  {
+    "name": "Prajukta Kashyap"
+  },
+  {
+    "name": "Kaustabh Hazarika"
+  }
+]
+    },
+
     "2024": {
-      "president": {
-        "name": "Arjun Singh",
-        "position": "President",
-        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "secretary": {
-        "name": "Meera Patel",
-        "position": "Secretary",
-        "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "treasurer": {
-        "name": "Rohit Verma",
-        "position": "Treasurer",
-        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "executives": [
-        {
-          "name": "Sneha Reddy",
-          "position": "Events Coordinator",
-          "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        },
-        {
-          "name": "Karan Malhotra",
-          "position": "Technical Lead",
-          "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        },
-        {
-          "name": "Priya Das",
-          "position": "Content Manager",
-          "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        },
-        {
-          "name": "Amit Kumar",
-          "position": "Outreach Lead",
-          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        }
-      ]
+      "facultyAdvisor": [],
+      "secretary": [],
+      "seniorExecutives": [],
+      "developers": []
     },
+
     "2023": {
-      "president": {
-        "name": "Neha Sharma",
-        "position": "President",
-        "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "secretary": {
-        "name": "Vikram Singh",
-        "position": "Secretary",
-        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "treasurer": {
-        "name": "Ananya Roy",
-        "position": "Treasurer",
-        "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "executives": [
-        {
-          "name": "Rahul Das",
-          "position": "Events Coordinator",
-          "image": "https://images.unsplash.com/photo-1507003211144-9f7b0e0a0a0a?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        },
-        {
-          "name": "Pooja Verma",
-          "position": "Technical Lead",
-          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        }
-      ]
-    },
-    "2022": {
-      "president": {
-        "name": "Rohan Kumar",
-        "position": "President",
-        "image": "https://images.unsplash.com/photo-1500648206746-3f0c9c0a0a0a?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "secretary": {
-        "name": "Kavita Singh",
-        "position": "Secretary",
-        "image": "https://images.unsplash.com/photo-1494790108377-be9c50290115?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "treasurer": {
-        "name": "Sanjay Patel",
-        "position": "Treasurer",
-        "image": "https://images.unsplash.com/photo-1438761681033-6f1f32d0c1a0?w=300&h=300&fit=crop",
-        "social": {
-          "instagram": "https://instagram.com",
-          "linkedin": "https://linkedin.com"
-        }
-      },
-      "executives": [
-        {
-          "name": "Divya Sharma",
-          "position": "Events Coordinator",
-          "image": "https://images.unsplash.com/photo-1487412720508-e32128c0f0a0?w=300&h=300&fit=crop",
-          "social": {
-            "instagram": "https://instagram.com",
-            "linkedin": "https://linkedin.com"
-          }
-        }
-      ]
+      "facultyAdvisor": [],
+      "secretary": [],
+      "seniorExecutives": [],
+      "developers": []
     }
   }
 }

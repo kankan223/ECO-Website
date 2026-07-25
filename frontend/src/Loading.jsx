@@ -104,7 +104,7 @@ export default function Loading({ onLoadingComplete }) {
             <div className="flex items-center justify-center space-x-4 mb-6 animate-slideUp" style={{ animationDelay: '0.3s' }}>
               <div className="h-0.5 w-16 bg-gradient-to-r from-transparent to-green-500"></div>
               <p className="text-3xl md:text-4xl text-green-800/80 font-light italic">
-                to the future of
+                to the 10 years celebration of
               </p>
               <div className="h-0.5 w-16 bg-gradient-to-l from-transparent to-green-500"></div>
             </div>

@@ -1,68 +1,35 @@
 [
   {
     "id": 1,
-    "title": "World Environment Day Celebration",
+    "title": "Prokriti 6.0-World Environment Day Celebration",
     "organizer": "Eco Club NITS",
-    "date": "June 5, 2025",
-    "time": "10:00 AM - 4:00 PM",
-    "location": "Main Auditorium, NIT Silchar",
-    "description": "Join us for a day-long celebration of World Environment Day with guest speakers, tree plantation, and eco-friendly workshops.",
+    "date": "3 June-9 June 2026",
+    "time": "10:00 AM - 05:00 PM",
+    "location": "Online",
+    "description": "Join us for a week-long celebration of World Environment Day with guest speakers, tree plantation, and eco-friendly workshops.",
     "status": "upcoming",
-    "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop"
+    "image": "/gallery/Prokriti.jpeg"
   },
   {
     "id": 2,
-    "title": "Green Hackathon 2025",
-    "organizer": "Eco Club & Coding Society",
-    "date": "June 15-17, 2025",
-    "time": "9:00 AM - 6:00 PM",
-    "location": "Computer Science Department",
-    "description": "A 48-hour hackathon focused on solving environmental challenges using technology and innovation.",
-    "status": "upcoming",
-    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Campus Cleaning Drive",
+    "title": "Greenx Hackathon 2025",
     "organizer": "Eco Club NITS",
-    "date": "May 20, 2025",
-    "time": "7:00 AM - 10:00 AM",
-    "location": "Entire Campus",
-    "description": "Monthly cleaning initiative to maintain our green campus. Join us to make our campus cleaner and greener.",
-    "status": "ongoing",
-    "image": "https://images.unsplash.com/photo-1526401485004-4f6b3b3b3b3b?w=600&h=400&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Sustainable Living Workshop",
-    "organizer": "Eco Club NITS",
-    "date": "April 10, 2025",
-    "time": "2:00 PM - 5:00 PM",
-    "location": "Seminar Hall",
-    "description": "Learn practical tips for sustainable living and reducing your carbon footprint in daily life.",
+    "date": "June 9, 2026",
+    "time": "08:00 AM - 08:00 PM",
+    "location": "Online",
+    "description": "A hackathon focused on solving environmental challenges using technology and innovation.",
     "status": "past",
-    "image": "https://images.unsplash.com/photo-1441974724843-83b75900f2e1?w=600&h=400&fit=crop"
-  },
-  {
-    "id": 5,
-    "title": "Solar Panel Installation Ceremony",
-    "organizer": "Eco Club NITS",
-    "date": "March 5, 2025",
-    "time": "11:00 AM - 12:00 PM",
-    "location": "Administrative Building",
-    "description": "Inauguration of new solar panel installation as part of our renewable energy initiative.",
-    "status": "past",
-    "image": "https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=600&h=400&fit=crop"
+    "image": "/gallery/greenx.jpeg"
   },
   {
     "id": 6,
-    "title": "Eco Quiz Competition",
+    "title": "Planet Quiz",
     "organizer": "Eco Club NITS",
-    "date": "February 28, 2025",
-    "time": "3:00 PM - 5:00 PM",
-    "location": "Central Library",
-    "description": "Test your knowledge about environmental issues and sustainability in our annual quiz competition.",
+    "date": "April 19, 2026",
+    "time": "7:00 PM",
+    "location": "New Gallery",
+    "description": "Test your knowledge about our planet Earth in our annual quiz competition.",
     "status": "past",
-    "image": "https://images.unsplash.com/photo-1501555088652-66efb10c3269?w=600&h=400&fit=crop"
+    "image": "/gallery/quiz.jpeg"
   }
 ]

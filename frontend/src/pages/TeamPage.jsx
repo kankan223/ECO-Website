@@ -1,21 +1,39 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import SectionTitle from '../components/SectionTitle';
-import MemberCard from '../components/MemberCard';
-import teamData from '../data/team.json';
+import { useState } from "react";
+import SectionTitle from "../components/SectionTitle";
+import MemberCard from "../components/MemberCard";
+import teamData from "../data/team.json";
 
-const years = ['2024', '2023', '2022'];
+const years = Object.keys(teamData.committees).sort((a, b) => b - a);
 
 export default function TeamPage() {
-  const [activeYear, setActiveYear] = useState('2024');
+  const [activeYear, setActiveYear] = useState(years[0]);
 
   const currentCommittee = teamData.committees[activeYear];
+
+  const sections = [
+    {
+      title: "Faculty Advisor",
+      data: currentCommittee.facultyAdvisor,
+    },
+    {
+      title: "Secretary",
+      data: currentCommittee.secretary,
+    },
+    {
+      title: "Senior Executives",
+      data: currentCommittee.seniorExecutives,
+    },
+    {
+      title: "Developers",
+      data: currentCommittee.developers,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] pt-20">
       {/* Hero Section */}
-      <section className="py-16 px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
             title="Our Team"
             subtitle="Meet the passionate individuals behind Eco Club"
@@ -23,106 +41,20 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Faculty Advisors & Leadership */}
-      <section className="py-12 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#222] mb-8">Leadership</h2>
-          
-          {/* Faculty Advisor */}
-          {teamData.facultyAdvisors && (
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-muted mb-6">Faculty Advisor</h3>
-              <div className="max-w-3xl">
-                {teamData.facultyAdvisors.map((advisor) => (
-                  <div key={advisor.id} className="bg-white rounded-2xl p-8 shadow-card">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                      <img
-                        src={advisor.image}
-                        alt={advisor.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                        loading="lazy"
-                      />
-                      <div>
-                        <h4 className="text-2xl font-bold text-[#222] mb-2">{advisor.name}</h4>
-                        <p className="text-[#3FAE5C] font-medium mb-4">{advisor.position}</p>
-                        <p className="text-muted leading-relaxed">{advisor.message}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+      {/* Team Section */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-6">
 
-          {/* Director */}
-          {teamData.directors && (
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-muted mb-6">Director</h3>
-              <div className="max-w-3xl">
-                {teamData.directors.map((director) => (
-                  <div key={director.id} className="bg-white rounded-2xl p-8 shadow-card">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                      <img
-                        src={director.image}
-                        alt={director.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                        loading="lazy"
-                      />
-                      <div>
-                        <h4 className="text-2xl font-bold text-[#222] mb-2">{director.name}</h4>
-                        <p className="text-[#3FAE5C] font-medium mb-4">{director.position}</p>
-                        <p className="text-muted leading-relaxed">{director.message}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Dean */}
-          {teamData.deans && (
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-muted mb-6">Dean</h3>
-              <div className="max-w-3xl">
-                {teamData.deans.map((dean) => (
-                  <div key={dean.id} className="bg-white rounded-2xl p-8 shadow-card">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                      <img
-                        src={dean.image}
-                        alt={dean.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                        loading="lazy"
-                      />
-                      <div>
-                        <h4 className="text-2xl font-bold text-[#222] mb-2">{dean.name}</h4>
-                        <p className="text-[#3FAE5C] font-medium mb-4">{dean.position}</p>
-                        <p className="text-muted leading-relaxed">{dean.message}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Student Members */}
-      <section className="py-12 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#222] mb-8">Student Members</h2>
-          
-          {/* Year Tabs */}
-          <div className="flex space-x-4 mb-8">
+          {/* Year Selector */}
+          <div className="flex flex-wrap justify-center gap-4 mb-14">
             {years.map((year) => (
               <button
                 key={year}
                 onClick={() => setActiveYear(year)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                className={`px-6 py-2 rounded-full transition-all font-medium ${
                   activeYear === year
-                    ? 'bg-[#3FAE5C] text-white'
-                    : 'bg-white text-[#222] border border-[#ECECEC] hover:border-[#3FAE5C]'
+                    ? "bg-[#3FAE5C] text-white"
+                    : "bg-white border border-gray-300 hover:border-[#3FAE5C]"
                 }`}
               >
                 {year}
@@ -130,32 +62,57 @@ export default function TeamPage() {
             ))}
           </div>
 
-          {/* Committee Members */}
-          {currentCommittee && (
-            <div>
-              {/* Core Members */}
-              <div className="mb-12">
-                <h3 className="text-xl font-semibold text-muted mb-6">Core Committee</h3>
-                <div className="grid md:grid-cols-3 gap-8">
-                  {[currentCommittee.president, currentCommittee.secretary, currentCommittee.treasurer].map((member, index) => (
-                    <MemberCard key={member.name} member={member} index={index} />
-                  ))}
-                </div>
-              </div>
+          {/* Sections with Photos */}
+          {sections.map(
+            (section) =>
+              section.data &&
+              section.data.length > 0 && (
+                <div key={section.title} className="mb-16">
 
-              {/* Executives */}
-              {currentCommittee.executives && currentCommittee.executives.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold text-muted mb-6">Executive Members</h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {currentCommittee.executives.map((member, index) => (
-                      <MemberCard key={member.name} member={member} index={index} />
+                  <h2 className="text-3xl font-bold text-center mb-10">
+                    {section.title}
+                  </h2>
+
+                  <div className="flex flex-wrap justify-center gap-8">
+                    {section.data.map((member, index) => (
+                      <div key={member.name} className="w-72">
+                        <MemberCard
+                          member={member}
+                          index={index}
+                        />
+                      </div>
                     ))}
                   </div>
+
                 </div>
-              )}
-            </div>
+              )
           )}
+
+          {/* Junior Executives */}
+          {currentCommittee.juniorExecutives &&
+            currentCommittee.juniorExecutives.length > 0 && (
+              <div className="mb-16">
+
+                <h2 className="text-3xl font-bold text-center mb-10">
+                  Junior Executives
+                </h2>
+
+                <div className="flex flex-wrap justify-center gap-5">
+                  {currentCommittee.juniorExecutives.map((member, index) => (
+                    <div
+                      key={index}
+                      className="w-64 bg-white rounded-xl shadow-card p-5 text-center border border-[#ECECEC] hover:border-[#3FAE5C] transition-all"
+                    >
+                      <h3 className="text-lg font-semibold text-[#222]">
+                        {member.name}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+            )}
+
         </div>
       </section>
     </div>
