@@ -5,149 +5,149 @@
       "facultyAdvisor": [
         {
           "name": "Dr. P Srinivasan",
-          "image": "/team/priya.jpg"
+          "image": "/team/faculty/srinivasa.jpg"
         }
       ],
 
       "secretary": [
         {
           "name": "Bishal Thakuria",
-          "image": ""
+          "image": "/team/batch_28/Bishal.png"
         }
       ],
 
       "seniorExecutives": [
         {
           "name": "Bhaskarjyoti Baruah",
-          "image": "/team/Bhaskar.jpg"
+          "image": "/team/batch_28/Bhaskar.png"
         },
         {
           "name": "Irfan Aniruz Zaman",
-          "image": ""
+          "image": "/team/batch_28/Irfan.png"
         },
         {
           "name": "Himangshu Das",
-          "image": ""
+          "image": "/team/batch_28/Himanshu.png"
         },
         {
           "name": "Parag Kumar",
-          "image": ""
+          "image": "/team/batch_28/Parag.png"
         },
         {
           "name": "Dharitri Deka",
-          "image": ""
+          "image": "/team/batch_28/Dharitri.png"
         },
         {
           "name": "Nibir Baidya",
-          "image": ""
+          "image": "/team/batch_28/Nibir.png"
         },
         {
           "name": "Mridu Paban Bora",
-          "image": ""
+          "image": "/team/batch_28/Mridu.png"
         },
         {
           "name": "Jugabrat Saikia",
-          "image": ""
+          "image": "/team/batch_28/Jugabrat.png"
         },
         {
           "name": "Tilutpal Borpatra",
-          "image": ""
+          "image": "/team/batch_28/Tilutpal.png"
         },
         {
           "name": "Pritom Baishya",
-          "image": ""
+          "image": "/team/batch_28/Pritom.png"
         },
         {
           "name": "Rishika Chakravarty",
-          "image": ""
+          "image": "/team/batch_28/Rishika.png"
         },
         {
           "name": "Mrigakhi Kashyap",
-          "image": ""
+          "image": "/team/batch_28/Mrigakhi.png"
         },
         {
           "name": "Srishti",
-          "image": ""
+          "image": "/team/batch_28/Srishti.png"
         },
         {
           "name": "Bidisha Kakoti",
-          "image": ""
+          "image": "/team/batch_28/Bidisha.png"
         },
         {
           "name": "Jagadish Deuri",
-          "image": ""
+          "image": "/team/batch_28/Jagadish.png"
         },
         {
           "name": "Kumar Deep Kashyap",
-          "image": ""
+          "image": "/team/batch_28/Kumardeep.png"
         },
         {
           "name": "Gunomoni",
-          "image": ""
+          "image": "/team/batch_28/Gunomoni.png"
         },
         {
           "name": "Ujjal Das",
-          "image": ""
+          "image": "/team/batch_28/Ujjal.png"
         },
         {
           "name": "Dwipanta Bipra Hazarika",
-          "image": ""
+          "image": "/team/batch_28/Dwipanta.png"
         },
         {
           "name": "Ankrit",
-          "image": ""
+          "image": "/team/batch_28/Ankrit.png"
         },
         {
           "name": "Nilutpal Bonia",
-          "image": ""
+          "image": "/team/batch_28/Nilutpal.png"
         },
         {
           "name": "Anwesha",
-          "image": ""
+          "image": "/team/batch_28/Anwesha.png"
         },
         {
           "name": "Jyotishmita Borah",
-          "image": ""
+          "image": "/team/batch_28/Jyotishmita.png"
         },
         {
           "name": "Chetna R",
-          "image": ""
+          "image": "/team/batch_28/Chetna.png"
         },
         {
           "name": "Amandeep Saikia",
-          "image": ""
+          "image": "/team/batch_28/Amandeep.png"
         },
         {
           "name": "Saurav Bhattacharjee",
-          "image": ""
+          "image": "/team/batch_28/Saurav.png"
         },
         {
           "name": "Ahiron Sharma",
-          "image": ""
+          "image": "/team/batch_28/Ahiron.png"
         },
         {
           "name": "Mrityujoy Saikia",
-          "image": ""
+          "image": "/team/batch_28/Mrityunjay.png"
         },
         {
           "name": "Shaswat Shivam Nath",
-          "image": ""
+          "image": "/team/batch_28/Shaswat.png"
         },
         {
-          "name": "mayur",
-          "image": ""
+          "name": "Mayur",
+          "image": "/team/batch_28/Mayur.png"
         },
         {
           "name": "saswati",
-          "image": ""
+          "image": "/team/batch_28/Saswati.png"
         },
         {
           "name": "Prajukta Kashyap",
-          "image": ""
+          "image": "/team/batch_28/Prajukta.png"
         },
         {
           "name": "Akash Deep Bhuyan",
-          "image": ""
+          "image": "/team/batch_28/Akash.png"
         }
 
       ],
@@ -155,37 +155,36 @@
       "developers": [
           {
             "name": "Probin Dhakal",
-            "image": "/team/Probin.jpg"
+            "image": "/team/batch_27/Probin.jpg"
         },
           {
             "name": "Bisal Prasad",
-            "image": "/team/Bisal.png"
+            "image": "/team/batch_27/Bisal.png"
         },
           {
             "name": "Chinmoy Dutta",
-            "image": "/team/Chinmoy.jpg"
+            "image": "/team/batch_27/Chinmoy.jpg"
         },
           {
             "name": "Ahiron Sharma",
-            "image": "/team/Ahiron.png"
+            "image": "/team/batch_28/Ahiron.png"
         },
           {
             "name": "Jyotishmita Borah",
-            "image": "/team/jyoti.jpeg"
+            "image": "/team/batch_28/Jyotishmita.png"
         },
           {
             "name": "Kankan Kalita",
-            "image": ""
-        },
-          {
-            "name": "Mausom Barman",
-            "image": ""
+            "image": "/team/batch_29/ken.jpeg"
         }
       ],
 
       "juniorExecutives": [
           {
             "name": "Kankan Kalita"
+        },
+          {
+            "name": "Atikuj Zaman"
         },
           {
             "name": "Debashish Nath"
@@ -322,125 +321,125 @@
       "facultyAdvisor": [
         {
           "name": "Dr. Priya Sharma",
-          "image": "/team/priya.jpg"
+          "image": "/team/batch_27/priya.jpg"
         }
       ],
 
       "secretary": [
         {
           "name": "Rajdeep Sarmah",
-          "image": "/team/meera.jpg"
+          "image": "/team/batch_27/meera.jpg"
         }
       ],
 
       "seniorExecutives": [
         {
           "name": "Chayanka Bharadwaj",
-          "image": "/team/Chayanka.jpg"
+          "image": "/team/batch_27/Chayanka.jpg"
         },
         {
           "name": "Bitopan Nath",
-          "image": "/team/Bitopan.jpg"
+          "image": "/team/batch_27/Bitopan.jpg"
         },
         {
           "name": "Rupam Sutradhar",
-          "image": "/team/Rupam.jpg"
+          "image": "/team/batch_27/Rupam.jpg"
         },
         {
           "name": "Tanmay Parasar",
-          "image": "/team/Tanmay.jpg"
+          "image": "/team/batch_27/Tanmay.jpg"
         },
         {
           "name": "Shreyas Chakraborty",
-          "image": "/team/Shreyas.jpeg"
+          "image": "/team/batch_27/Shreyas.jpeg"
         },
         {
           "name": "Kankana Das",
-          "image": "/team/Kankana.jpg"
+          "image": "/team/batch_27/Kankana.jpg"
         },
         {
           "name": "Mourjya Mohin Gogoi",
-          "image": "/team/Mourjya.JPG"
+          "image": "/team/batch_27/Mourjya.JPG"
         },
         {
           "name": "Nihar Das",
-          "image": "/team/nihar das.jpg"
+          "image": "/team/batch_27/nihar das.jpg"
         },
         {
           "name": "Manisha Saloi",
-          "image": "/team/Manisha.jpg"
+          "image": "/team/batch_27/Manisha.jpg"
         },
         {
           "name": "Kuldip Kalita",
-          "image": "/team/Kuldip.jpg"
+          "image": "/team/batch_27/Kuldip.jpg"
         },
         {
           "name": "Gurupada Barada",
-          "image": "/team/Gurupada.jpg"
+          "image": "/team/batch_27/Gurupada.jpg"
         },
         {
           "name": "Namrata Nayak",
-          "image": "/team/Namrata.jpg"
+          "image": "/team/batch_27/Namrata.jpg"
         },
         {
           "name": "Bhabana Das",
-          "image": "/team/bhabana das.jpeg"
+          "image": "/team/batch_27/bhabana das.jpeg"
         },
         {
           "name": "Uddipta Gautam",
-          "image": "/team/UGB.jpg"
+          "image": "/team/batch_27/UGB.jpg"
         },
         {
           "name": "Pranjit Saikia",
-          "image": "/team/Pranjit.jpg"
+          "image": "/team/batch_27/Pranjit.jpg"
         },
         {
           "name": "Saranga Pratim Bhuyan",
-          "image": "/team/Saranga.jpg"
+          "image": "/team/batch_27/Saranga.jpg"
         },
         {
           "name": "Priyanuj Kashyap",
-          "image": "/team/Priyanuj.jpg"
+          "image": "/team/batch_27/Priyanuj.jpg"
         },
         {
           "name": "Ankit Kashyap",
-          "image": "/team/Ankit.webp"
+          "image": "/team/batch_27/Ankit.webp"
         },
         {
           "name": "Ankita Devi",
-          "image": "/team/Ankita.jpg"
+          "image": "/team/batch_27/Ankita.jpg"
         },
         {
           "name": "Sabera Rahman",
-          "image": "/team/Sabera.jpg"
+          "image": "/team/batch_27/Sabera.jpg"
         },
         {
           "name": "Prasurjya Shyam",
-          "image": "/team/Cheng.jpg"
+          "image": "/team/batch_27/Cheng.jpg"
         },
         {
           "name": "Probin Dhakal",
-          "image": "/team/Probin.jpg"
+          "image": "/team/batch_27/Probin.jpg"
         },
         {
           "name": "Sharmistha Bhattacharjee",
-          "image": "/team/Sharmistha.jpg"
+          "image": "/team/batch_27/Sharmistha.jpg"
         },
         {
           "name": "Bisal Prasad",
-          "image": "/team/Bisal.png"
+          "image": "/team/batch_27/Bisal.png"
         },
         {
           "name": "Chinmoy Dutta",
-          "image": "/team/Chinmoy.jpg"
+          "image": "/team/batch_27/Chinmoy.jpg"
         },
         {
           "name": "Gyanjyoti Das",
-          "image": "/team/Gyanjyoti.jpg"
+          "image": "/team/batch_27/Gyanjyoti.jpg"
         },
         {
           "name": "Anwesha Chetia",
-          "image": "/team/Anwesha.jpg"
+          "image": "/team/batch_27/Anwesha.jpg"
         }
 
       ],
@@ -448,23 +447,23 @@
       "developers": [
          {
           "name": "Probin Dhakal",
-          "image": "/team/Probin.jpg"
+          "image": "/team/batch_27/Probin.jpg"
         },
         {
           "name": "Bisal Prasad",
-          "image": "/team/Bisal.png"
+          "image": "/team/batch_27/Bisal.png"
         },
         {
           "name": "Chinmoy Dutta",
-          "image": "/team/Chinmoy.jpg"
+          "image": "/team/batch_27/Chinmoy.jpg"
         },
         {
           "name": "Ahiron Sharma",
-          "image": "/team/Ahiron.png"
+          "image": "/team/batch_28/Ahiron.png"
         },
         {
           "name": "Jyotishmita Borah",
-          "image": "/team/jyoti.jpeg"
+          "image": "/team/batch_28/Jyotishmita.png"
         }
       ],
       "juniorExecutives": [
