@@ -1,5 +1,323 @@
 {
   "committees": {
+
+    "2026": {
+      "facultyAdvisor": [
+        {
+          "name": "Dr. P Srinivasan",
+          "image": "/team/priya.jpg"
+        }
+      ],
+
+      "secretary": [
+        {
+          "name": "Bishal Thakuria",
+          "image": ""
+        }
+      ],
+
+      "seniorExecutives": [
+        {
+          "name": "Bhaskarjyoti Baruah",
+          "image": "/team/Bhaskar.jpg"
+        },
+        {
+          "name": "Irfan Aniruz Zaman",
+          "image": ""
+        },
+        {
+          "name": "Himangshu Das",
+          "image": ""
+        },
+        {
+          "name": "Parag Kumar",
+          "image": ""
+        },
+        {
+          "name": "Dharitri Deka",
+          "image": ""
+        },
+        {
+          "name": "Nibir Baidya",
+          "image": ""
+        },
+        {
+          "name": "Mridu Paban Bora",
+          "image": ""
+        },
+        {
+          "name": "Jugabrat Saikia",
+          "image": ""
+        },
+        {
+          "name": "Tilutpal Borpatra",
+          "image": ""
+        },
+        {
+          "name": "Pritom Baishya",
+          "image": ""
+        },
+        {
+          "name": "Rishika Chakravarty",
+          "image": ""
+        },
+        {
+          "name": "Mrigakhi Kashyap",
+          "image": ""
+        },
+        {
+          "name": "Srishti",
+          "image": ""
+        },
+        {
+          "name": "Bidisha Kakoti",
+          "image": ""
+        },
+        {
+          "name": "Jagadish Deuri",
+          "image": ""
+        },
+        {
+          "name": "Kumar Deep Kashyap",
+          "image": ""
+        },
+        {
+          "name": "Gunomoni",
+          "image": ""
+        },
+        {
+          "name": "Ujjal Das",
+          "image": ""
+        },
+        {
+          "name": "Dwipanta Bipra Hazarika",
+          "image": ""
+        },
+        {
+          "name": "Ankrit",
+          "image": ""
+        },
+        {
+          "name": "Nilutpal Bonia",
+          "image": ""
+        },
+        {
+          "name": "Anwesha",
+          "image": ""
+        },
+        {
+          "name": "Jyotishmita Borah",
+          "image": ""
+        },
+        {
+          "name": "Chetna R",
+          "image": ""
+        },
+        {
+          "name": "Amandeep Saikia",
+          "image": ""
+        },
+        {
+          "name": "Saurav Bhattacharjee",
+          "image": ""
+        },
+        {
+          "name": "Ahiron Sharma",
+          "image": ""
+        },
+        {
+          "name": "Mrityujoy Saikia",
+          "image": ""
+        },
+        {
+          "name": "Shaswat Shivam Nath",
+          "image": ""
+        },
+        {
+          "name": "mayur",
+          "image": ""
+        },
+        {
+          "name": "saswati",
+          "image": ""
+        },
+        {
+          "name": "Prajukta Kashyap",
+          "image": ""
+        },
+        {
+          "name": "Akash Deep Bhuyan",
+          "image": ""
+        }
+
+      ],
+
+      "developers": [
+          {
+            "name": "Probin Dhakal",
+            "image": "/team/Probin.jpg"
+        },
+          {
+            "name": "Bisal Prasad",
+            "image": "/team/Bisal.png"
+        },
+          {
+            "name": "Chinmoy Dutta",
+            "image": "/team/Chinmoy.jpg"
+        },
+          {
+            "name": "Ahiron Sharma",
+            "image": "/team/Ahiron.png"
+        },
+          {
+            "name": "Jyotishmita Borah",
+            "image": "/team/jyoti.jpeg"
+        },
+          {
+            "name": "Kankan Kalita",
+            "image": ""
+        },
+          {
+            "name": "Mausom Barman",
+            "image": ""
+        }
+      ],
+
+      "juniorExecutives": [
+          {
+            "name": "Kankan Kalita"
+        },
+          {
+            "name": "Debashish Nath"
+        },
+          {
+            "name": "Birikh Pritam Saikia"
+        },
+          {
+            "name": "Satya Ranjan Borgohain"
+        },
+          {
+            "name": "Raj Tilak Chutia"
+        },
+          {
+            "name": "Gitartha Kaushik Deka"
+        },
+          {
+            "name": "Anuj Gogoi"
+        },
+          {
+            "name": "Gargi Kalita"
+        },
+          {
+            "name": "Arnab Kalita"
+        },
+          {
+            "name": "Arindom Borah"
+        },
+          {
+            "name": "Krishnav Pritam Kalita"
+        },
+          {
+            "name": "Prachurja Pratim Rajkhowa"
+        },
+          {
+            "name": "Violina Sarma"
+        },
+          {
+            "name": "Himan Nath"
+        },
+          {
+            "name": "Shanku Chowdhury"
+        },
+          {
+            "name": "Hrishikesh Kumar Das"
+        },
+          {
+            "name": "Niranjan Deori"
+        },
+          {
+            "name": "Ujjal Rabha"
+        },
+          {
+            "name": "Kamaljyoti Senchowa"
+        },
+          {
+            "name": "Kankan Das"
+        },
+          {
+            "name": "Anurag Borah"
+        },
+          {
+            "name": "Bhargab Jyoti Saikia"
+        },
+          {
+            "name": "Gouranga Soren"
+        },
+          {
+            "name": "Hirak Jyoti Nath"
+        },
+          {
+            "name": "Sashanka Hazarika"
+        },
+          {
+            "name": "Mausam Barman"
+        },
+          {
+            "name": "Supriya Khanikar"
+        },
+          {
+            "name": "Tanaya Hazarika"
+        },
+          {
+            "name": "Trinayan Bezbaurah"
+        },
+          {
+            "name": "Jishnu Borgohain"
+        },
+          {
+            "name": "Rishi Raj Sahu"
+        },
+          {
+            "name": "Moni Kumar Deori"
+        },
+          {
+            "name": "Devashish Rajguru"
+        },
+          {
+            "name": "Bishal Kumar"
+        },
+          {
+            "name": "Pragyan Pratim Saikia"
+        },
+          {
+            "name": "Pritam Kashyap"
+        },
+          {
+            "name": "Yeleswarapu Abhinav"
+        },
+          {
+            "name": "Subham Jyoti Das"
+        },
+          {
+            "name": "Protyoy Pradyut Chowdhury"
+        },
+          {
+            "name": "Pragya Das"
+        },
+          {
+            "name": "Bashab Sonowal"
+        },
+          {
+            "name": "Kiril Kashyap Das"
+        },
+          {
+            "name": "Abhijit Debnath"
+        }
+
+      ]
+
+    },
+
     "2025": {
       "facultyAdvisor": [
         {
