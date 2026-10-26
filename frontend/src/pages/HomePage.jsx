@@ -20,19 +20,31 @@ import 'swiper/css/effect-fade';
 
 const heroSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&h=1080&fit=crop',
-    title: 'Nurturing Nature, Empowering Minds',
-    subtitle: 'Join the green revolution at NIT Silchar',
+    image:
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop&crop=center&q=85',
+    title: 'Rooted in Nature. Driven by Change.',
+    subtitle:
+      'Empowering the NIT Silchar community to protect nature and build a greener tomorrow.',
+    cta: 'Explore Our Mission',
+    alt: 'Sunlight filtering through a lush green forest',
   },
   {
-    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&h=1080&fit=crop',
-    title: 'Building a Sustainable Future',
-    subtitle: 'Together, we can make a difference',
+    image:
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1920&h=1080&fit=crop&crop=center&q=85',
+    title: 'Plant Today. Sustain Tomorrow.',
+    subtitle:
+      'Every tree we nurture brings us one step closer to a healthier, more sustainable planet.',
+    cta: 'Join the Green Movement',
+    alt: 'Lush green plants growing in natural sunlight',
   },
   {
-    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&h=1080&fit=crop',
-    title: 'Green Initiatives for a Better Tomorrow',
-    subtitle: 'Innovation meets environmental responsibility',
+    image:
+      'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1920&h=1080&fit=crop&crop=center&q=85',
+    title: 'A Campus That Cares for the Earth.',
+    subtitle:
+      'Turning environmental awareness into action through conservation, innovation, and community.',
+    cta: 'Discover Our Initiatives',
+    alt: 'Wildlife thriving in a natural green landscape',
   },
 ];
 
@@ -147,6 +159,69 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+    {/* future initiative upgrade */}
+      {/* Green Initiatives Section
+      <section
+        id="initiatives"
+        className="bg-[#F1F7F0] py-20 px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle
+            title="Our Green Initiatives"
+            subtitle="Turning environmental awareness into meaningful action"
+          />
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {greenInitiatives.map((initiative, index) => (
+              <motion.article
+                key={initiative.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group overflow-hidden rounded-2xl bg-white
+                  shadow-sm hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="overflow-hidden aspect-[4/3]">
+                  <img
+                    src={initiative.image}
+                    alt={initiative.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover
+                      transition-transform duration-500
+                      group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#245638]">
+                    {initiative.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm text-gray-600 leading-7">
+                    {initiative.description}
+                  </p>
+
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 mt-5
+                      font-semibold text-[#26734D]
+                      hover:text-[#17452D] transition-colors
+                      focus-visible:outline-2
+                      focus-visible:outline-offset-4"
+                  >
+                    Get involved
+                    <FiArrowRight aria-hidden="true" />
+                  </a>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
 
       {/* Achievements Section */}
       <section ref={achievementsRef} className="py-20 px-6 lg:px-8">
