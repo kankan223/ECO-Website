@@ -7,7 +7,7 @@
     "time": "10:00 AM - 05:00 PM",
     "location": "Online",
     "description": "Join us for a week-long celebration of World Environment Day with guest speakers, tree plantation, and eco-friendly workshops.",
-    "status": "upcoming",
+    "status": "past",
     "image": "/events/Prokriti.jpeg"
   },
   {
@@ -31,5 +31,16 @@
     "description": "Test your knowledge about our planet Earth in our annual quiz competition.",
     "status": "past",
     "image": "/events/quiz.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Quiz Competition",
+    "organizer": "Eco Club NITS",
+    "date": "27 October, 2026",
+    "time": "6:00 PM",
+    "location": "New Gallery (G301)",
+    "description": "Test your knowledge in our annual quiz competition.",
+    "status": "past",
+    "image": "/events/quiz_competition_27october2026.jpeg"
   }
 ]

@@ -1,14 +1,26 @@
 [
   {
     "id": 1,
+    "src": "/gallery/kati_bihu.webp",
+    "alt": "Kati Bihu",
+    "category": "Celebration"
+  },
+  {
+    "id": 2,
     "src": "/gallery/Plantation.jpeg",
     "alt": "Tree plantation activity",
     "category": "Plantation"
   },
   {
-    "id": 2,
+    "id": 3,
     "src": "/gallery/Expert.jpeg",
     "alt": "Expert Talk Session",
     "category": "Workshops"
+  },
+  {
+    "id": 4,
+    "src": "/gallery/earth_day.webp",
+    "alt": " International Mother Earth Day",
+    "category": "Competitions"
   }
 ]
