@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/logo.png" alt="Eco Club Logo" className="w-12 h-12" />
+            <img src="/10_year_logo.png" alt="Eco Club Logo" className="w-12 h-12" />
             <span className={`text-2xl font-bold transition-colors ${useDarkText ? 'text-[#222]' : 'text-white'}`}>
               Eco Club NITS
             </span>

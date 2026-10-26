@@ -187,7 +187,13 @@
             "name": "Atikuj Zaman"
         },
           {
+            "name": "Hrishikesh Kumar Das"
+        },
+          {
             "name": "Debashish Nath"
+        },
+          {
+            "name": "Krishnav Pritam Kalita"
         },
           {
             "name": "Birikh Pritam Saikia"
@@ -214,9 +220,6 @@
             "name": "Arindom Borah"
         },
           {
-            "name": "Krishnav Pritam Kalita"
-        },
-          {
             "name": "Prachurja Pratim Rajkhowa"
         },
           {
@@ -227,9 +230,6 @@
         },
           {
             "name": "Shanku Chowdhury"
-        },
-          {
-            "name": "Hrishikesh Kumar Das"
         },
           {
             "name": "Niranjan Deori"
@@ -320,15 +320,15 @@
     "2025": {
       "facultyAdvisor": [
         {
-          "name": "Dr. Priya Sharma",
-          "image": "/team/batch_27/priya.jpg"
+          "name": "Dr. Kulkarni Vihangraj Vijaykumar",
+          "image": "/team/faculty/Kulkarni.jpg"
         }
       ],
 
       "secretary": [
         {
           "name": "Rajdeep Sarmah",
-          "image": "/team/batch_27/meera.jpg"
+          "image": "/team/batch_27/rajdeep.jpeg"
         }
       ],
 
