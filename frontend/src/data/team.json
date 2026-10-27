@@ -154,28 +154,11 @@
 
       "developers": [
           {
-            "name": "Probin Dhakal",
-            "image": "/team/batch_27/Probin.jpg"
-        },
-          {
-            "name": "Bisal Prasad",
-            "image": "/team/batch_27/Bisal.png"
-        },
-          {
-            "name": "Chinmoy Dutta",
-            "image": "/team/batch_27/Chinmoy.jpg"
-        },
-          {
-            "name": "Ahiron Sharma",
-            "image": "/team/batch_28/Ahiron.png"
-        },
-          {
-            "name": "Jyotishmita Borah",
-            "image": "/team/batch_28/Jyotishmita.png"
-        },
-          {
             "name": "Kankan Kalita",
             "image": "/team/batch_29/ken.jpeg"
+        },{
+            "name": "Sakib Ashraf",
+            "image": "/team/batch_29/sakib.png"
         }
       ],
 
