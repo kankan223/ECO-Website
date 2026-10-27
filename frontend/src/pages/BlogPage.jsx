@@ -49,9 +49,9 @@ export default function BlogPage() {
                 <p className="text-muted mb-6">{blogsData[0].excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted">{blogsData[0].date}</span>
-                  <a href="#" className="text-[#3FAE5C] font-medium hover:underline">
+                  <span className="text-[#3FAE5C] font-medium">
                     Read More
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>

@@ -48,9 +48,9 @@ export default function NoixorgoPage() {
                 <p className="text-muted mb-6">{noixorgoData.featured.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted">{noixorgoData.featured.date}</span>
-                  <a href="#" className="text-[#3FAE5C] font-medium hover:underline">
+                  <span className="text-[#3FAE5C] font-medium">
                     Read Issue
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>

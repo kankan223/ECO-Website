@@ -21,7 +21,7 @@ import 'swiper/css/effect-fade';
 const heroSlides = [
   {
     image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop&crop=center&q=85',
+      '/home/hero-1.webp',
     title: 'Rooted in Nature. Driven by Change.',
     subtitle:
       'Empowering the NIT Silchar community to protect nature and build a greener tomorrow.',
@@ -30,7 +30,7 @@ const heroSlides = [
   },
   {
     image:
-      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1920&h=1080&fit=crop&crop=center&q=85',
+      '/home/hero-2.webp',
     title: 'Plant Today. Sustain Tomorrow.',
     subtitle:
       'Every tree we nurture brings us one step closer to a healthier, more sustainable planet.',
@@ -39,7 +39,7 @@ const heroSlides = [
   },
   {
     image:
-      'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1920&h=1080&fit=crop&crop=center&q=85',
+      '/home/hero-3.webp',
     title: 'A Campus That Cares for the Earth.',
     subtitle:
       'Turning environmental awareness into action through conservation, innovation, and community.',
@@ -48,37 +48,9 @@ const heroSlides = [
   },
 ];
 
-const greenInitiatives = [
-  {
-    id: 1,
-    title: 'Tree Plantation Drive',
-    description: 'Our annual tree plantation drive aims to increase green cover on campus and surrounding areas, contributing to a healthier environment.',
-    image: 'https://images.unsplash.com/photo-1416879241372-5961d01131e3?w=800&h=500&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Solar Power Initiative',
-    description: 'Harnessing solar energy to power our campus sustainably, reducing our carbon footprint and promoting renewable energy adoption.',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e95801c1d87?w=800&h=500&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Waste Management Program',
-    description: 'Comprehensive waste segregation and recycling program to minimize landfill waste and promote circular economy practices.',
-    image: 'https://images.unsplash.com/photo-1532992512062-4d3a0f5c1c0a?w=800&h=500&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'Water Conservation',
-    description: 'Rainwater harvesting and water-saving initiatives to ensure sustainable water usage across the campus.',
-    image: 'https://images.unsplash.com/photo-1527219521225-1b6e2e9e1a0a?w=800&h=500&fit=crop',
-  },
-];
-
 export default function HomePage() {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [achievementsRef, achievementsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [initiativesRef, initiativesInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [eventsRef, eventsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [blogRef, blogInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
