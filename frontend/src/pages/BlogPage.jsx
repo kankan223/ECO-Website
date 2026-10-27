@@ -89,7 +89,7 @@ export default function BlogPage() {
               <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" />
               <input
                 type="search"
-                placeholder="Search articles..."
+                placeholder="Search blogs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE5C] bg-white"
@@ -106,14 +106,14 @@ export default function BlogPage() {
             layout
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredBlogs.slice(1).map((blog, index) => (
+            {filteredBlogs.map((blog, index) => (
               <BlogCard key={blog.id} blog={blog} index={index} />
             ))}
           </motion.div>
 
-          {filteredBlogs.length <= 1 && (
+          {filteredBlogs.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-xl text-muted">No articles found matching your criteria.</p>
+              <p className="text-xl text-muted">No blogs found matching your criteria.</p>
             </div>
           )}
         </div>
