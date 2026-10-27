@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import GalleryCard from '../components/GalleryCard';
 import galleryData from '../data/gallery.json';
 
-const categories = ['All', 'Plantation', 'Cleaning', 'Workshops', 'Meetings', 'Competitions'];
+const categories = ['All', 'Green Care', 'Discussions', 'Competitions', 'Celebrations'];
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState('All');
