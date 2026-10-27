@@ -10,6 +10,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const NoixorgoPage = lazy(() => import('./pages/NoixorgoPage'));
 const EventsPage = lazy(() => import('./pages/EventsPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const TeamPage = lazy(() => import('./pages/TeamPage'));
 
@@ -59,6 +60,7 @@ export default function App() {
             <Route path="/noixorgo" element={<NoixorgoPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:blogId" element={<BlogPostPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

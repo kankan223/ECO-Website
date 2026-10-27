@@ -5,14 +5,11 @@
     "image": "/noixorgo/noixorgo.jpeg",
     "date": "12 July, 2026"
   },
-  "articles": [
+  "previous": [
     {
-      "id": 1,
       "title": "Green Campus Initiative: A Year in Review",
-      "excerpt": "Looking back at our achievements in making NIT Silchar a more sustainable campus.",
-      "date": "May 25, 2026",
-      "category": "Sustainability",
-      "image": "/blogs/featured.jpg"
-    }],
-  "categories": ["All", "Sustainability", "Technology", "Conservation", "Waste Management", "Water", "Student Stories"]
+      "description": "Looking back at our achievements in making NIT Silchar a more sustainable campus.",
+      "image": "/blogs/featured.jpg",
+      "date": "12 July, 2025"
+    }]
 }

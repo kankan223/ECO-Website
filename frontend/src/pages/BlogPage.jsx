@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSearch } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import BlogCard from '../components/BlogCard';
 import blogsData from '../data/blogs.json';
@@ -49,9 +50,12 @@ export default function BlogPage() {
                 <p className="text-muted mb-6">{blogsData[0].excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted">{blogsData[0].date}</span>
-                  <span className="text-[#3FAE5C] font-medium">
+                  <Link
+                    to={`/blog/${blogsData[0].id}`}
+                    className="text-[#3FAE5C] font-medium hover:underline"
+                  >
                     Read More
-                  </span>
+                  </Link>
                 </div>
               </div>
             </div>

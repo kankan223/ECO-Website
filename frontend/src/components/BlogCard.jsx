@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiCalendar } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function BlogCard({ blog, index }) {
   return (
@@ -30,9 +31,12 @@ export default function BlogCard({ blog, index }) {
               <FiCalendar className="w-4 h-4 mr-2 text-[#3FAE5C]" />
               {blog.date}
             </div>
-            <span className="text-sm font-medium text-[#3FAE5C] group-hover:underline">
+            <Link
+              to={`/blog/${blog.id}`}
+              className="text-sm font-medium text-[#3FAE5C] group-hover:underline"
+            >
               Continue Reading
-            </span>
+            </Link>
           </div>
         </div>
       </div>

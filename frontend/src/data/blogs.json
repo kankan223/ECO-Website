@@ -5,7 +5,12 @@
     "excerpt": "Exploring the intersection of technology and environmental sustainability in modern times. How can we build a greener future?",
     "date": "May 15, 2025",
     "image": "/blogs/featured.jpg",
-    "author": "Eco Club Team",
-    "category": "Sustainability"
+    "author": "Eco Club",
+    "category": "Sustainability",
+    "content": [
+      "Sustainable development is about creating a future where people and the planet can thrive together. It brings environmental responsibility, social wellbeing, and economic progress into the same conversation.",
+      "Technology can help us move towards that future when it is designed with care. From renewable energy and efficient infrastructure to better ways of measuring our impact, thoughtful innovation gives communities practical tools for making sustainable choices.",
+      "The path forward also depends on everyday action. By learning, sharing ideas, and working together, we can support solutions that protect natural resources and make a greener future possible for everyone."
+    ]
   }
 ]
