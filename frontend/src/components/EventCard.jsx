@@ -47,7 +47,7 @@ export default function EventCard({ event, index }) {
           </div>
           <p className="text-muted mb-4 flex-grow line-clamp-3">{event.description}</p>
           <Button variant="primary" className="w-full">
-            Register Now
+            <a href={event.link}>Register Now</a>
           </Button>
         </div>
       </div>

@@ -22,7 +22,7 @@
     "image": "/events/greenx.jpeg"
   },
   {
-    "id": 6,
+    "id": 3,
     "title": "Planet Quiz",
     "organizer": "Eco Club NITS",
     "date": "April 19, 2026",
@@ -33,7 +33,7 @@
     "image": "/events/quiz.jpeg"
   },
   {
-    "id": 7,
+    "id": 4,
     "title": "Quiz Competition",
     "organizer": "Eco Club NITS",
     "date": "27 October, 2026",
@@ -42,5 +42,17 @@
     "description": "Test your knowledge in our annual quiz competition.",
     "status": "past",
     "image": "/events/quiz_competition_27october2026.webp"
+  },
+  {
+    "id": 5,
+    "title": "Waste To Product",
+    "organizer": "Eco Club NITS",
+    "date": "29 September, 2026 - 1 September, 2026",
+    "time": "N/A",
+    "location": "",
+    "description": "Turn waste into wealth and let your creativity make a difference.",
+    "status": "upcoming",
+    "image": "/events/waste_to_product.jpeg",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSet9T23pXQyRKfTr4_wI_meMEAjxfgit7VYYEazToLJGC8HPw/viewform?usp=publish-editor"
   }
 ]
