@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Leaf } from 'lucide-react';
 
-// Matches the splash's `transition-all duration-8` class so the fade is never cut off.
-const FADE_MS = 8;
-
-export default function Loading({ onLoadingComplete, duration = 3000 }) {
+export default function Loading({ onLoadingComplete }) {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // One owner for the whole sequence: hold, fade out, then report done. The splash
-    // always takes exactly `duration` ms end to end, fade included.
-    const holdMs = Math.max(0, duration - FADE_MS);
-    const fadeTimer = setTimeout(() => setFadeOut(true), holdMs);
-    const doneTimer = setTimeout(() => onLoadingComplete(), duration);
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(doneTimer);
-    };
-  }, [duration, onLoadingComplete]);
+    
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+      // Wait for fade-out animation to complete before calling onLoadingComplete
+      const completionTimer = setTimeout(() => {
+        onLoadingComplete();
+      }, 600); // Should match your CSS transition duration
+      
+      return () => clearTimeout(completionTimer);
+    }, 3000);
+  
+    return () => clearTimeout(timer);
+  }, [onLoadingComplete]);
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50 flex items-center justify-center relative overflow-hidden transition-all duration-800 ${fadeOut ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
