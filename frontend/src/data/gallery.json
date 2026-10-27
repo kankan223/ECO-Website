@@ -22,5 +22,23 @@
     "src": "/gallery/earth_day.webp",
     "alt": " International Mother Earth Day",
     "category": "Competitions"
+  },
+  {
+    "id": 5,
+    "src": "/gallery/Earth_day_price.jpeg",
+    "alt": "Under World Earth Day",
+    "category": "Competitions"
+  },
+  {
+    "id": 6,
+    "src": "/gallery/farewell.webp",
+    "alt": "Farewell Batch'26",
+    "category": "Celebrations"
+  },
+  {
+    "id": 7,
+    "src": "/gallery/quiz2026.webp",
+    "alt": "Quiz Competition",
+    "category": "Competitions"
   }
 ]

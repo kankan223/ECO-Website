@@ -17,7 +17,7 @@
  *  - logos keep PNG (transparency); everything else becomes WebP
  *  - originals are in git, so `git checkout -- public/` is the rollback
  *
- * Requires ImageMagick (`convert` / `identify`) on PATH. No npm dependencies.
+ * Requires ImageMagick (`convert` / `identify`, or `magick`) on PATH. No npm dependencies.
  */
 
 import { execFileSync } from 'node:child_process';
@@ -47,22 +47,32 @@ const QUALITY = { home: 70 };
 const SKIP = new Set(['vite.svg', 'logo.png', '10_year_logo.png']);
 const MIN_SIZE_TO_BOTHER = 300 * 1024; // bytes
 
-const bin = (name) => {
+const findCommand = (name) => {
   try {
-    execFileSync('command', ['-v', name], { shell: '/bin/bash' });
+    execFileSync(process.platform === 'win32' ? 'where.exe' : 'which', [name], {
+      stdio: 'ignore',
+    });
     return name;
   } catch {
     return null;
   }
 };
-const CONVERT = bin('convert');
-const IDENTIFY = bin('identify');
+
+const MAGICK = findCommand('magick');
+const CONVERT = MAGICK ? 'magick' : findCommand('convert');
+const IDENTIFY = MAGICK ? 'magick' : findCommand('identify');
+const convertArgs = (args) => args;
+const identifyArgs = (args) => (MAGICK ? ['identify', ...args] : args);
+
 if (!CONVERT || !IDENTIFY) {
-  console.error('ImageMagick not found on PATH (need `convert` and `identify`).');
+  console.error(
+    'ImageMagick not found on PATH (install it and reopen the terminal; need `magick` or `convert`/`identify`).',
+  );
   process.exit(2);
 }
 
-const identify = (file, fmt) => execFileSync(IDENTIFY, ['-format', fmt, file]).toString();
+const identify = (file, fmt) =>
+  execFileSync(IDENTIFY, identifyArgs(['-format', fmt, file])).toString();
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const p = path.join(dir, e.name);
@@ -79,7 +89,7 @@ function maxEdgeFor(file) {
 
 function convertTo(src, dest, edge, extra = [], quality = 82) {
   // `>` only shrinks; never upscales an already-small image.
-  execFileSync(CONVERT, [
+  execFileSync(CONVERT, convertArgs([
     src,
     '-resize',
     `${edge}x${edge}>`,
@@ -89,7 +99,7 @@ function convertTo(src, dest, edge, extra = [], quality = 82) {
     ...(dest.endsWith('.webp') ? ['-define', 'webp:method=6'] : []),
     ...extra,
     dest,
-  ]);
+  ]));
 }
 
 const files = walk(PUBLIC).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
