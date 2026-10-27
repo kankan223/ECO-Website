@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Leaf } from 'lucide-react';
 
-// Matches the splash's `transition-all duration-800` class so the fade is never cut off.
-const FADE_MS = 800;
+// Matches the splash's `transition-all duration-8` class so the fade is never cut off.
+const FADE_MS = 8;
 
 export default function Loading({ onLoadingComplete, duration = 3000 }) {
   const [fadeOut, setFadeOut] = useState(false);
