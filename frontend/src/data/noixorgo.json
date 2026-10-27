@@ -2,57 +2,57 @@
   "featured": {
     "week": 208,
     "date": "12th July, 2026",
-    "coverImage": "/noixorgo/1.png",
-    "quoteImage": "/noixorgo/2.png"
+    "coverImage": "/noixorgo/1.webp",
+    "quoteImage": "/noixorgo/2.webp"
   },
   "previous": [
     {
       "week": 207,
       "date": "15th March, 2026",
-      "coverImage": "/noixorgo/3.png",
-      "quoteImage": "/noixorgo/4.png"
+      "coverImage": "/noixorgo/3.webp",
+      "quoteImage": "/noixorgo/4.webp"
     },
     {
       "week": 206,
       "date": "30th August, 2025",
-      "coverImage": "/noixorgo/5.png",
-      "quoteImage": "/noixorgo/6.png"
+      "coverImage": "/noixorgo/5.webp",
+      "quoteImage": "/noixorgo/6.webp"
     },
     {
       "week": 205,
       "date": "13th July, 2025",
-      "coverImage": "/noixorgo/7.png",
-      "quoteImage": "/noixorgo/8.png"
+      "coverImage": "/noixorgo/7.webp",
+      "quoteImage": "/noixorgo/8.webp"
     },
     {
       "week": 201,
       "date": "8th June, 2025",
-      "coverImage": "/noixorgo/9.png",
-      "quoteImage": "/noixorgo/10.png"
+      "coverImage": "/noixorgo/9.webp",
+      "quoteImage": "/noixorgo/10.webp"
     },
     {
       "week": 199,
       "date": "18th May, 2025",
-      "coverImage": "/noixorgo/11.png",
-      "quoteImage": "/noixorgo/12.png"
+      "coverImage": "/noixorgo/11.webp",
+      "quoteImage": "/noixorgo/12.webp"
     },
     {
       "week": 198,
       "date": "27th April, 2025",
-      "coverImage": "/noixorgo/13.png",
-      "quoteImage": "/noixorgo/14.png"
+      "coverImage": "/noixorgo/13.webp",
+      "quoteImage": "/noixorgo/14.webp"
     },
     {
       "week": 196,
       "date": "13th April, 2025",
-      "coverImage": "/noixorgo/15.png",
-      "quoteImage": "/noixorgo/16.png"
+      "coverImage": "/noixorgo/15.webp",
+      "quoteImage": "/noixorgo/16.webp"
     },
     {
       "week": 195,
       "date": "6th April, 2025",
-      "coverImage": "/noixorgo/17.png",
-      "quoteImage": "/noixorgo/18.png"
+      "coverImage": "/noixorgo/17.webp",
+      "quoteImage": "/noixorgo/18.webp"
     }
   ]
 }

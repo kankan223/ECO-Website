@@ -1,5 +1,5 @@
-import React, { useState, Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Loading from './Loading';
 import Navbar from './components/Navbar';
@@ -19,6 +19,16 @@ const TeamPage = lazy(() => import('./pages/TeamPage'));
 const SPLASH_SEEN_KEY = 'eco-splash-seen';
 const FIRST_VISIT_MS = 3000;
 const RETURNING_VISIT_MS = 1000;
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+}
 
 function getSplashDuration() {
   try {
@@ -47,6 +57,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] flex flex-col">
+      <ScrollToTop />
       <Navbar />
       
       <AnimatePresence mode="wait">

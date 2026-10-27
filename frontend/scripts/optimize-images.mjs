@@ -1,209 +1,175 @@
 #!/usr/bin/env node
 /**
- * optimize-images.mjs — shrink the photo payload in `public/`.
- *
- * Why: several source photos were phone-camera originals (up to 12 MB) rendered at
- * ~128 px. This resizes them to what the UI actually displays and re-encodes them
- * as WebP, then rewrites every reference in `src/` and `index.html` when a file
- * changes extension.
+ * Reduce image payloads in public/ using sharp.
  *
  * Usage:
- *   node scripts/optimize-images.mjs            # apply
- *   node scripts/optimize-images.mjs --dry-run  # report only, touch nothing
+ *   node scripts/optimize-images.mjs
+ *   node scripts/optimize-images.mjs --dry-run
+ *   node scripts/optimize-images.mjs --force
+ *   node scripts/optimize-images.mjs --force --folders gallery,events
  *
- * Rules:
- *  - never grows a file: a rewrite only happens when the result is smaller
- *  - idempotent: already-optimised files are skipped
- *  - logos keep PNG (transparency); everything else becomes WebP
- *  - originals are in git, so `git checkout -- public/` is the rollback
- *
- * Requires ImageMagick (`convert` / `identify`, or `magick`) on PATH. No npm dependencies.
+ * The script only replaces an image when the optimized result is smaller.
+ * Non-logo images are written as WebP and source references are updated when
+ * the extension changes. Existing small images are left untouched.
  */
 
-import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC = path.join(ROOT, 'public');
 const DRY = process.argv.includes('--dry-run');
+const FORCE = process.argv.includes('--force');
+const foldersArgument = process.argv.find((argument) => argument.startsWith('--folders='));
+const TARGET_FOLDERS = foldersArgument
+  ? new Set(foldersArgument.slice('--folders='.length).split(',').filter(Boolean))
+  : null;
 
-/** Max longest edge per top-level folder, chosen from the rendered size in the UI. */
 const MAX_EDGE = {
-  team: 512, // MemberCard renders at w-32 (128 CSS px)
-  gallery: 1024, // aspect-square grid card
-  home: 1600, // full-bleed hero slider (1600 keeps it under 300 KB at q82)
+  team: 512,
+  gallery: 1024,
+  home: 1600,
   events: 1280,
   achievements: 1280,
   noixorgo: 1280,
   blogs: 1280,
 };
-const ROOT_LOGO_MAX = 320; // biggest source logo rendered at 96 CSS px (~3x DPR)
-const ROOT_LOGO_MIN = 64 * 1024; // root logos are small art: anything over this is waste
-/** Per-folder encoder quality; heroes are full-bleed behind an overlay, so q70 is
- *  visually indistinguishable there and is what keeps them under the 300 KB budget. */
-const QUALITY = { home: 70 };
+const ROOT_LOGO_MAX = 320;
+const ROOT_LOGO_MIN = 64 * 1024;
+const MIN_SIZE_TO_BOTHER = 300 * 1024;
 const SKIP = new Set(['vite.svg', 'logo.png', '10_year_logo.png']);
-const MIN_SIZE_TO_BOTHER = 300 * 1024; // bytes
+const IMAGE_PATTERN = /\.(jpe?g|png|webp)$/i;
 
-const findCommand = (name) => {
-  try {
-    execFileSync(process.platform === 'win32' ? 'where.exe' : 'which', [name], {
-      stdio: 'ignore',
-    });
-    return name;
-  } catch {
-    return null;
-  }
-};
+const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  const file = path.join(dir, entry.name);
+  return entry.isDirectory() ? walk(file) : [file];
+});
 
-const MAGICK = findCommand('magick');
-const CONVERT = MAGICK ? 'magick' : findCommand('convert');
-const IDENTIFY = MAGICK ? 'magick' : findCommand('identify');
-const convertArgs = (args) => args;
-const identifyArgs = (args) => (MAGICK ? ['identify', ...args] : args);
-
-if (!CONVERT || !IDENTIFY) {
-  console.error(
-    'ImageMagick not found on PATH (install it and reopen the terminal; need `magick` or `convert`/`identify`).',
-  );
-  process.exit(2);
-}
-
-const identify = (file, fmt) =>
-  execFileSync(IDENTIFY, identifyArgs(['-format', fmt, file])).toString();
-const walk = (dir) =>
-  fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
-    const p = path.join(dir, e.name);
-    return e.isDirectory() ? walk(p) : [p];
-  });
-
-const kb = (n) => `${(n / 1024).toFixed(1)} KB`;
+const kb = (bytes) => `${(bytes / 1024).toFixed(1)} KB`;
 
 function maxEdgeFor(file) {
-  const rel = path.relative(PUBLIC, file);
-  if (!rel.includes(path.sep)) return ROOT_LOGO_MAX; // top-level: the logos
-  return MAX_EDGE[rel.split(path.sep)[0]] ?? 1280;
+  const relative = path.relative(PUBLIC, file);
+  if (!relative.includes(path.sep)) return ROOT_LOGO_MAX;
+  return MAX_EDGE[relative.split(path.sep)[0]] ?? 1280;
 }
 
-function convertTo(src, dest, edge, extra = [], quality = 82) {
-  // `>` only shrinks; never upscales an already-small image.
-  execFileSync(CONVERT, convertArgs([
-    src,
-    '-resize',
-    `${edge}x${edge}>`,
-    '-strip',
-    '-quality',
-    String(quality),
-    ...(dest.endsWith('.webp') ? ['-define', 'webp:method=6'] : []),
-    ...extra,
-    dest,
-  ]));
+function qualityFor(file) {
+  const folder = path.relative(PUBLIC, file).split(path.sep)[0];
+  return folder === 'home' ? 70 : 82;
 }
 
-const files = walk(PUBLIC).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
-const renames = new Map(); // absolute old path -> absolute new path
+async function optimize(file, destination, edge, quality, isLogo) {
+  let pipeline = sharp(file).rotate().resize({
+    width: edge,
+    height: edge,
+    fit: 'inside',
+    withoutEnlargement: true,
+  });
+
+  if (isLogo) {
+    pipeline = pipeline.png({ compressionLevel: 9, palette: true, colors: 256 });
+  } else {
+    pipeline = pipeline.webp({ quality, effort: 6 });
+  }
+
+  await pipeline.toFile(destination);
+}
+
+const files = walk(PUBLIC).filter((file) => {
+  if (!IMAGE_PATTERN.test(file)) return false;
+  if (!TARGET_FOLDERS) return true;
+  const relative = path.relative(PUBLIC, file);
+  return TARGET_FOLDERS.has(relative.split(path.sep)[0]);
+});
+const renames = new Map();
 let saved = 0;
 let touched = 0;
 
 for (const file of files) {
-  const base = path.basename(file);
-  if (SKIP.has(base)) {
-    // Logos: keep PNG (alpha), just drop the payload.
-    const before = fs.statSync(file).size;
-    if (before <= ROOT_LOGO_MIN) continue;
-    const tmp = `${file}.tmp.png`;
-    try {
-      // Logos are flat art: quantising to a 256-colour palette is the big win and
-      // is lossless-looking at the 48 px they are actually rendered at.
-      convertTo(file, tmp, ROOT_LOGO_MAX, ['-colors', '256'], 82);
-      const after = fs.statSync(tmp).size;
-      if (after < before) {
-        saved += before - after;
-        touched++;
-        if (DRY) fs.rmSync(tmp);
-        else fs.renameSync(tmp, file);
-        console.log(`  ~ ${base}: ${kb(before)} -> ${kb(after)} (png)`);
-      } else {
-        fs.rmSync(tmp);
-      }
-    } catch (err) {
-      if (fs.existsSync(tmp)) fs.rmSync(tmp);
-      console.error(`  ! ${base}: ${String(err.message).split('\n')[0]}`);
-    }
-    continue;
-  }
-
-  const before = fs.statSync(file).size;
-  const width = Number(identify(file, '%w'));
-  const height = Number(identify(file, '%h'));
+  const sourceStats = fs.statSync(file);
+  const isLogo = SKIP.has(path.basename(file));
+  const metadata = await sharp(file).metadata();
   const edge = maxEdgeFor(file);
-  const quality = QUALITY[path.relative(PUBLIC, file).split(path.sep)[0]] ?? 82;
-  const alreadySmall = before <= MIN_SIZE_TO_BOTHER && Math.max(width, height) <= edge;
-  if (alreadySmall) continue;
+  const canForceReencode = FORCE && !file.endsWith('.webp');
+  const isAlreadySmall = !canForceReencode && sourceStats.size <= (isLogo ? ROOT_LOGO_MIN : MIN_SIZE_TO_BOTHER)
+    && Math.max(metadata.width || 0, metadata.height || 0) <= edge;
 
-  const isWebp = file.endsWith('.webp');
-  const dest = isWebp ? file : file.replace(/\.[^.]+$/, '.webp');
-  // ImageMagick picks the encoder from the extension, so the temp file must keep it.
-  const destExt = path.extname(dest);
-  const tmp = path.join(path.dirname(dest), `.${path.basename(dest, destExt)}.tmp${destExt}`);
+  if (isAlreadySmall) continue;
+
+  const destination = isLogo || file.endsWith('.webp')
+    ? file
+    : file.replace(/\.[^.]+$/, '.webp');
+  const extension = path.extname(destination);
+  const temporary = path.join(
+    path.dirname(destination),
+    `.${path.basename(destination, extension)}.tmp${extension}`,
+  );
 
   try {
-    convertTo(file, tmp, edge, [], quality);
-    const after = fs.statSync(tmp).size;
-    if (after >= before) {
-      fs.rmSync(tmp);
-      continue; // no gain, leave the original alone
-    }
-    if (DRY) {
-      fs.rmSync(tmp);
-      console.log(`  ~ ${path.relative(ROOT, file)}: ${kb(before)} -> ${kb(after)}${dest !== file ? ` -> ${path.basename(dest)}` : ''}`);
-      saved += before - after;
-      touched++;
+    await optimize(file, temporary, edge, qualityFor(file), isLogo);
+    const optimizedSize = fs.statSync(temporary).size;
+
+    if (optimizedSize >= sourceStats.size) {
+      fs.rmSync(temporary);
       continue;
     }
-    fs.renameSync(tmp, dest);
-    if (dest !== file) {
-      fs.rmSync(file);
-      renames.set(file, dest);
-    }
-    saved += before - after;
-    touched++;
+
+    const relative = path.relative(ROOT, file);
+    const dimensions = `${metadata.width || '?'}x${metadata.height || '?'}`;
     console.log(
-      `  ~ ${path.relative(ROOT, file)}: ${kb(before)} ${width}x${height} -> ${kb(after)} ${identify(dest, '%wx%h')}${dest !== file ? ` (${path.basename(dest)})` : ''}`,
+      `  ~ ${relative}: ${kb(sourceStats.size)} ${dimensions} -> ${kb(optimizedSize)}`
+      + `${destination !== file ? ` (${path.basename(destination)})` : ''}`,
     );
-  } catch (err) {
-    if (fs.existsSync(tmp)) fs.rmSync(tmp);
-    console.error(`  ! ${path.relative(ROOT, file)}: ${String(err.message).split('\n')[0]}`);
+    saved += sourceStats.size - optimizedSize;
+    touched++;
+
+    if (DRY) {
+      fs.rmSync(temporary);
+      continue;
+    }
+
+    if (destination === file) {
+      fs.writeFileSync(file, fs.readFileSync(temporary));
+      fs.rmSync(temporary);
+    } else {
+      fs.renameSync(temporary, destination);
+      fs.rmSync(file);
+      renames.set(file, destination);
+    }
+  } catch (error) {
+    if (fs.existsSync(temporary)) fs.rmSync(temporary);
+    console.error(`  ! ${path.relative(ROOT, file)}: ${error.message}`);
   }
 }
 
-// --- rewrite references for anything that changed name -----------------------
-const REF_FILES = [
-  ...walk(path.join(ROOT, 'src')).filter((f) => /\.(jsx?|json|css)$/.test(f)),
+const referenceFiles = [
+  ...walk(path.join(ROOT, 'src')).filter((file) => /\.(jsx?|json|css)$/.test(file)),
   path.join(ROOT, 'index.html'),
 ];
-let refEdits = 0;
-for (const [oldAbs, newAbs] of renames) {
-  const oldUrl = `/${path.relative(PUBLIC, oldAbs).split(path.sep).join('/')}`;
-  const newUrl = `/${path.relative(PUBLIC, newAbs).split(path.sep).join('/')}`;
-  for (const refFile of REF_FILES) {
-    const text = fs.readFileSync(refFile, 'utf8');
-    if (!text.includes(oldUrl)) continue;
+let referenceEdits = 0;
+
+for (const [oldFile, newFile] of renames) {
+  const oldUrl = `/${path.relative(PUBLIC, oldFile).split(path.sep).join('/')}`;
+  const newUrl = `/${path.relative(PUBLIC, newFile).split(path.sep).join('/')}`;
+
+  for (const referenceFile of referenceFiles) {
+    const content = fs.readFileSync(referenceFile, 'utf8');
+    if (!content.includes(oldUrl)) continue;
     if (DRY) {
-      console.log(`  ref ${oldUrl} -> ${newUrl} in ${path.relative(ROOT, refFile)}`);
+      console.log(`  ref ${oldUrl} -> ${newUrl} in ${path.relative(ROOT, referenceFile)}`);
       continue;
     }
-    fs.writeFileSync(refFile, text.split(oldUrl).join(newUrl));
-    refEdits++;
-    console.log(`  ref ${oldUrl} -> ${newUrl} in ${path.relative(ROOT, refFile)}`);
+    fs.writeFileSync(referenceFile, content.split(oldUrl).join(newUrl));
+    referenceEdits++;
+    console.log(`  ref ${oldUrl} -> ${newUrl} in ${path.relative(ROOT, referenceFile)}`);
   }
 }
 
-const total = walk(PUBLIC).reduce((n, f) => n + fs.statSync(f).size, 0);
+const total = walk(PUBLIC).reduce((sum, file) => sum + fs.statSync(file).size, 0);
 console.log(
-  `\n${DRY ? '[dry-run] ' : ''}optimised ${touched} file(s), freed ${kb(saved)}; ` +
-    `${renames.size} renamed, ${refEdits} reference(s) updated.`,
+  `\n${DRY ? '[dry-run] ' : ''}optimised ${touched} file(s), freed ${kb(saved)}; `
+  + `${renames.size} renamed, ${referenceEdits} reference(s) updated.`,
 );
 console.log(`public/ is now ${kb(total)} (${(total / 1024 / 1024).toFixed(1)} MB).`);
