@@ -110,3 +110,98 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.noixorgo-stage {
+  height: clamp(28rem, 52vw, 39rem);
+}
+
+.noixorgo-layer {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: clamp(17rem, 27vw, 23rem);
+  transform-origin: center top;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.noixorgo-layer[data-position='active'] {
+  z-index: 4;
+  transform: translateX(-50%) scale(1);
+}
+
+.noixorgo-layer[data-position='previous'] {
+  z-index: 2;
+  transform: translateX(-104%) translateY(2.5rem) scale(0.84);
+}
+
+.noixorgo-layer[data-position='next'] {
+  z-index: 2;
+  transform: translateX(4%) translateY(2.5rem) scale(0.84);
+}
+
+.noixorgo-layer[data-position='far'] {
+  z-index: 1;
+  transform: translateX(58%) translateY(5rem) scale(0.68);
+  opacity: 0.62;
+}
+
+.noixorgo-layer-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.noixorgo-active-card {
+  max-width: 23rem;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.noixorgo-active-card:hover {
+  transform: translateY(-0.35rem) scale(1.02);
+}
+
+.noixorgo-background-card {
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.noixorgo-background-card:hover {
+  transform: translateY(-0.25rem) scale(1.04);
+}
+
+.noixorgo-image-transition {
+  transition: opacity 200ms ease;
+}
+
+.noixorgo-no-motion,
+.noixorgo-no-motion .noixorgo-image-transition,
+.noixorgo-no-motion .noixorgo-active-card,
+.noixorgo-no-motion .noixorgo-background-card {
+  transition: none;
+}
+
+@media (max-width: 767px) {
+  .noixorgo-stage {
+    height: min(125vw, 35rem);
+  }
+
+  .noixorgo-layer {
+    width: min(68vw, 19rem);
+  }
+
+  .noixorgo-layer[data-position='previous'] {
+    transform: translateX(-96%) translateY(2rem) scale(0.8);
+  }
+
+  .noixorgo-layer[data-position='next'] {
+    transform: translateX(-4%) translateY(2rem) scale(0.8);
+  }
+
+  .noixorgo-layer[data-position='far'] {
+    transform: translateX(42%) translateY(4rem) scale(0.65);
+  }
+
+  .noixorgo-active-card {
+    max-width: min(68vw, 19rem);
+  }
+}
