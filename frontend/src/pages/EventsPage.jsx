@@ -5,10 +5,12 @@ import SectionTitle from '../components/SectionTitle';
 import EventCard from '../components/EventCard';
 import eventsData from '../data/events.json';
 
-const filters = ['Upcoming', 'Past', 'Ongoing'];
+const filters = ['All', ...[...new Set(eventsData.map((event) => event.status))].map((status) => status.charAt(0).toUpperCase() + status.slice(1))];
 
 export default function EventsPage() {
-  const [activeFilter, setActiveFilter] = useState('Upcoming');
+  const [activeFilter, setActiveFilter] = useState(
+    eventsData.some((event) => event.status === 'upcoming') ? 'Upcoming' : 'All'
+  );
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredEvents = eventsData.filter(event => {

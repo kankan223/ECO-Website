@@ -4,6 +4,7 @@ import { FiSearch } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import BlogCard from '../components/BlogCard';
+import Button from '../components/Button';
 import blogsData from '../data/blogs.json';
 
 const categories = ['All', 'Sustainability', 'Conservation', 'Climate', 'Technology', 'Waste Management', 'Water'];
@@ -97,6 +98,34 @@ export default function BlogPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Submit Your Own Blog */}
+      <section className="py-12 px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="text-2xl font-bold text-[#222] mb-4">
+              Want to contribute?
+            </h2>
+            <p className="text-muted max-w-2xl mx-auto mb-8">
+              Share your ideas, stories, or reflections with the Eco Club community.
+              Submit your own blog through the form to get started.
+            </p>
+            <Button
+              variant="secondary"
+              href="/blog/submit"
+              className="inline-flex items-center gap-2"
+            >
+              Write for the Blog
+            </Button>
+          </motion.div>
         </div>
       </section>
 

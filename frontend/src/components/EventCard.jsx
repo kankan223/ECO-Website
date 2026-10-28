@@ -40,18 +40,19 @@ export default function EventCard({ event, index }) {
               <FiClock className="w-4 h-4 mr-2 text-[#3FAE5C]" />
               {event.time}
             </div>
-            <div className="flex items-center text-sm text-muted">
-              <FiMapPin className="w-4 h-4 mr-2 text-[#3FAE5C]" />
-              {event.location}
-            </div>
+            {event.location && (
+              <div className="flex items-center text-sm text-muted">
+                <FiMapPin className="w-4 h-4 mr-2 text-[#3FAE5C]" />
+                {event.location}
+              </div>
+            )}
           </div>
           <p className="text-muted mb-4 flex-grow line-clamp-3">{event.description}</p>
-          {
-            event.status == 'upcoming'?
-              <Button variant="primary" className="w-full">
-                <a href={event.link}>Register Now</a>
-              </Button>:null
-          }
+          {event.status === 'upcoming' && event.link && (
+            <Button variant="primary" className="w-full" href={event.link}>
+              Register Now
+            </Button>
+          )}
         </div>
       </div>
     </motion.div>

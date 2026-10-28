@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
@@ -53,6 +54,7 @@ export default function HomePage() {
   const [achievementsRef, achievementsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [eventsRef, eventsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [blogRef, blogInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const upcomingEvents = eventsData.filter(e => e.status === 'upcoming');
 
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
@@ -244,23 +246,36 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-12"
           >
-            <Swiper
-              modules={[Autoplay]}
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
-              loop
-            >
-              {eventsData.filter(e => e.status === 'upcoming').map((event, index) => (
-                <SwiperSlide key={event.id}>
-                  <EventCard event={event} index={index} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            {upcomingEvents.length > 0 ? (
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={24}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                loop={upcomingEvents.length > 3}
+              >
+                {upcomingEvents.map((event, index) => (
+                  <SwiperSlide key={event.id}>
+                    <EventCard event={event} index={index} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <div className="rounded-2xl bg-white shadow-card px-6 py-12 text-center">
+                <p className="text-xl font-semibold text-[#222]">No upcoming events right now</p>
+                <p className="mt-2 text-muted">We are busy planning the next one. Browse everything that has happened so far.</p>
+                <Link
+                  to="/events"
+                  className="inline-flex items-center mt-6 px-6 py-3 rounded-xl font-medium bg-white text-[#3FAE5C] border-2 border-[#3FAE5C] hover:bg-[#3FAE5C]/5 transition-all"
+                >
+                  Browse past events
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>
