@@ -163,6 +163,51 @@
     color: #B5C0BA;
   }
 
+  html.dark .home-featured-event-card {
+    background-color: #17231D;
+    border-color: #34443B;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  html.dark .home-featured-event-card .home-featured-register {
+    background-color: #A9E58A;
+    color: #142219;
+  }
+
+  html.dark .home-featured-event-card .home-featured-details {
+    border-color: #52675A;
+    color: #DCE9E0;
+  }
+
+  html.dark .home-featured-event-card .home-featured-details:hover {
+    background-color: #22332A;
+  }
+
+  html.dark .home-featured-events {
+    background-color: #111916;
+  }
+
+  html.dark .home-featured-all-link {
+    color: #A9E58A;
+  }
+
+  html.dark .home-featured-all-link:hover {
+    color: #D5F3C3;
+  }
+
+  html.dark .home-featured-registration-note {
+    background-color: #294733;
+    color: #DCE9E0;
+  }
+
+  html.dark .home-featured-event-card [class*='text-\\[\\#3d5144\\]'] {
+    color: #D0DDD4;
+  }
+
+  html.dark .home-featured-event-card svg {
+    color: #A9E58A;
+  }
+
   html.dark .home-about {
     background-color: #17231D;
   }

@@ -7,10 +7,10 @@ import { FiArrowRight, FiCalendar, FiClock, FiMapPin } from 'react-icons/fi';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import AchievementCard from '../components/AchievementCard';
-import EventCard from '../components/EventCard';
 import BlogCard from '../components/BlogCard';
 import achievementsData from '../data/achievements.json';
 import eventsData from '../data/events.json';
+import { getUpcomingEvents } from '../utils/eventStatus';
 import blogsData from '../data/blogs.json';
 
 // Import Swiper styles
@@ -52,9 +52,8 @@ const heroSlides = [
 export default function HomePage() {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [achievementsRef, achievementsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [eventsRef, eventsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [blogRef, blogInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const upcomingEvents = eventsData.filter(e => e.status === 'upcoming');
+  const upcomingEvents = getUpcomingEvents(eventsData);
   const featuredEvent = upcomingEvents[0];
 
   return (
@@ -141,14 +140,14 @@ export default function HomePage() {
       </section>
 
       {/* Featured upcoming event */}
-      <section className="bg-white px-6 pb-20 pt-16 lg:px-8 lg:pb-24">
+      <section className="home-featured-events bg-white px-6 pb-20 pt-16 lg:px-8 lg:pb-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#548545]">Mark your calendar</p>
               <h2 className="text-3xl font-extrabold tracking-tight text-[#20372a] sm:text-4xl">What’s happening next</h2>
             </div>
-            <Link to="/events" className="inline-flex items-center gap-2 font-semibold text-[#24623b] transition hover:text-[#17482c]">
+            <Link to="/events" className="home-featured-all-link inline-flex items-center gap-2 font-semibold text-[#24623b] transition hover:text-[#17482c]">
               All events <FiArrowRight aria-hidden="true" />
             </Link>
           </div>
@@ -159,7 +158,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55 }}
-              className="grid overflow-hidden rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] shadow-[0_20px_60px_rgba(18,50,31,0.10)] md:grid-cols-[0.95fr_1.05fr]"
+              className="home-featured-event-card grid overflow-hidden rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] shadow-[0_20px_60px_rgba(18,50,31,0.10)] md:grid-cols-[0.95fr_1.05fr]"
             >
               <div className="relative min-h-64 md:min-h-[25rem]">
                 <img src={featuredEvent.image} alt={featuredEvent.title} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
@@ -180,20 +179,20 @@ export default function HomePage() {
                 </div>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   {featuredEvent.link ? (
-                    <Button href={featuredEvent.link} target="_blank" rel="noreferrer" className="gap-2 !rounded-full !px-7">
+                    <Button href={featuredEvent.link} target="_blank" rel="noreferrer" className="home-featured-register gap-2 !rounded-full !px-7">
                       Register now <FiArrowRight aria-hidden="true" />
                     </Button>
                   ) : (
-                    <span className="inline-flex items-center rounded-full bg-[#e8efe5] px-5 py-3 font-semibold text-[#45634c]">Registration details coming soon</span>
+                    <span className="home-featured-registration-note inline-flex items-center rounded-full bg-[#e8efe5] px-5 py-3 font-semibold text-[#45634c]">Registration details coming soon</span>
                   )}
-                  <Link to="/events" className="inline-flex items-center justify-center rounded-full border border-[#cddbcc] px-6 py-3 font-semibold text-[#31523a] transition hover:bg-white">
+                  <Link to="/events" className="home-featured-details inline-flex items-center justify-center rounded-full border border-[#cddbcc] px-6 py-3 font-semibold text-[#31523a] transition hover:bg-white">
                     Event details
                   </Link>
                 </div>
               </div>
             </motion.article>
           ) : (
-            <div className="rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] px-6 py-12 text-center sm:px-10">
+            <div className="home-featured-event-card rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] px-6 py-12 text-center sm:px-10">
               <p className="text-xl font-bold text-[#20372a]">No upcoming events just yet</p>
               <p className="mx-auto mt-2 max-w-lg text-[#66756b]">We’re planning what’s next. Visit the events page to explore our past activities and check back for new announcements.</p>
               <Link to="/events" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#215d39] px-6 py-3 font-semibold text-white transition hover:bg-[#17482c]">
@@ -353,53 +352,6 @@ export default function HomePage() {
       </section>
 
       
-
-      {/* Upcoming Events Section */}
-      <section ref={eventsRef} className="home-content-section py-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitle
-            title="Upcoming Events"
-            subtitle="Join us in our upcoming environmental activities"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={eventsInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-12"
-          >
-            {upcomingEvents.length > 0 ? (
-              <Swiper
-                modules={[Autoplay]}
-                spaceBetween={24}
-                slidesPerView={1}
-                breakpoints={{
-                  640: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
-                loop={upcomingEvents.length > 3}
-              >
-                {upcomingEvents.map((event, index) => (
-                  <SwiperSlide key={event.id}>
-                    <EventCard event={event} index={index} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ) : (
-              <div className="home-empty-events rounded-2xl bg-white shadow-card px-6 py-12 text-center">
-                <p className="text-xl font-semibold text-[#222]">No upcoming events right now</p>
-                <p className="mt-2 text-muted">We are busy planning the next one. Browse everything that has happened so far.</p>
-                <Link
-                  to="/events"
-                  className="inline-flex items-center mt-6 px-6 py-3 rounded-xl font-medium bg-white text-[#3FAE5C] border-2 border-[#3FAE5C] hover:bg-[#3FAE5C]/5 transition-all"
-                >
-                  Browse past events
-                </Link>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Blog Section */}
       <section ref={blogRef} className="home-blog-section py-20 px-6 lg:px-8 bg-white">
