@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { FiCalendar, FiClock, FiMapPin } from 'react-icons/fi';
 import Button from './Button';
+import { getEventStatus } from '../utils/eventStatus';
 
 export default function EventCard({ event, index }) {
+  const status = getEventStatus(event);
   const statusColors = {
     upcoming: 'bg-[#3FAE5C] text-white',
     ongoing: 'bg-amber-500 text-white',
@@ -24,8 +26,8 @@ export default function EventCard({ event, index }) {
             className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
             loading="lazy"
           />
-          <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${statusColors[event.status]}`}>
-            {event.status}
+          <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${statusColors[status]}`}>
+            {status}
           </span>
         </div>
         <div className="p-6 flex flex-col flex-grow">
@@ -48,7 +50,7 @@ export default function EventCard({ event, index }) {
             )}
           </div>
           <p className="text-muted mb-4 flex-grow line-clamp-3">{event.description}</p>
-          {event.status === 'upcoming' && event.link && (
+          {status === 'upcoming' && event.link && (
             <Button variant="primary" className="w-full" href={event.link}>
               Register Now
             </Button>

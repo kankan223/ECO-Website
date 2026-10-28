@@ -27,6 +27,7 @@ in a responsive React application.
 - Merch page with a reduced-motion-aware product video
 - Lazy-loaded routes and Vite production code splitting
 - Shared navigation, footer, transitions, cards, and section components
+- Persistent light/dark theme toggle with contrast-aware dark styling
 
 ## Technology
 
@@ -229,6 +230,7 @@ For client-side routes to work on a static host, configure the host to serve
   conventions.
 - Preserve image aspect ratios and avoid cropping artwork containing text.
 - Run `npm run lint` and `npm run build` before submitting changes.
+- Test both light and dark themes when changing shared components or colors.
 - Run the image optimizer in dry-run mode before applying bulk asset changes.
 - Do not commit local `node_modules`, `dist`, `.env` files, or other ignored
   development artifacts.

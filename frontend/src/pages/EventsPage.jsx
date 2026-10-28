@@ -4,17 +4,21 @@ import { FiSearch } from 'react-icons/fi';
 import SectionTitle from '../components/SectionTitle';
 import EventCard from '../components/EventCard';
 import eventsData from '../data/events.json';
+import { withEventStatus } from '../utils/eventStatus';
 
-const filters = ['All', ...[...new Set(eventsData.map((event) => event.status))].map((status) => status.charAt(0).toUpperCase() + status.slice(1))];
+const eventsWithStatus = eventsData.map((event) => withEventStatus(event));
+const filters = ['Upcoming', 'Past'];
 
 export default function EventsPage() {
   const [activeFilter, setActiveFilter] = useState(
-    eventsData.some((event) => event.status === 'upcoming') ? 'Upcoming' : 'All'
+    eventsWithStatus.some((event) => event.status !== 'past') ? 'Upcoming' : 'Past'
   );
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredEvents = eventsData.filter(event => {
-    const matchesFilter = activeFilter.toLowerCase() === 'all' || event.status === activeFilter.toLowerCase();
+  const filteredEvents = eventsWithStatus.filter(event => {
+    const matchesFilter = activeFilter === 'Upcoming'
+      ? event.status !== 'past'
+      : event.status === 'past';
     const matchesSearch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          event.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;

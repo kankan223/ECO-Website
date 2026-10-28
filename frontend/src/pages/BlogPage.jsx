@@ -101,34 +101,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Submit Your Own Blog */}
-      <section className="py-12 px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <h2 className="text-2xl font-bold text-[#222] mb-4">
-              Want to contribute?
-            </h2>
-            <p className="text-muted max-w-2xl mx-auto mb-8">
-              Share your ideas, stories, or reflections with the Eco Club community.
-              Submit your own blog through the form to get started.
-            </p>
-            <Button
-              variant="secondary"
-              href="/blog/submit"
-              className="inline-flex items-center gap-2"
-            >
-              Write for the Blog
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Blog Grid */}
       <section className="py-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -146,6 +118,34 @@ export default function BlogPage() {
               <p className="text-xl text-muted">No blogs found matching your criteria.</p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Submit Your Own Blog */}
+      <section className="px-6 pb-16 pt-4 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-[#ECECEC] bg-white px-6 py-10 text-center shadow-card sm:px-10"
+          >
+            <h2 className="mb-4 text-2xl font-bold text-[#222]">
+              Want to contribute?
+            </h2>
+            <p className="mx-auto mb-8 max-w-2xl text-muted">
+              Share your ideas, stories, or reflections with the Eco Club community.
+              Submit your own blog through the form to get started.
+            </p>
+            <Button
+              variant="secondary"
+              href="/blog/submit"
+              className="inline-flex items-center gap-2"
+            >
+              Write for the Blog
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>
