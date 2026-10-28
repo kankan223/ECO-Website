@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiCalendar, FiClock, FiMapPin } from 'react-icons/fi';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import AchievementCard from '../components/AchievementCard';
@@ -55,6 +55,7 @@ export default function HomePage() {
   const [eventsRef, eventsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [blogRef, blogInView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const upcomingEvents = eventsData.filter(e => e.status === 'upcoming');
+  const featuredEvent = upcomingEvents[0];
 
   return (
     <div className="home-page min-h-screen bg-[#FAFAFA]">
@@ -136,6 +137,70 @@ export default function HomePage() {
             <p className="text-2xl font-extrabold tracking-tight text-[#24623b] sm:text-3xl">One community</p>
             <p className="mt-1 text-xs font-medium text-[#66756b] sm:text-sm">students taking action for a greener campus</p>
           </div>
+        </div>
+      </section>
+
+      {/* Featured upcoming event */}
+      <section className="bg-white px-6 pb-20 pt-16 lg:px-8 lg:pb-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#548545]">Mark your calendar</p>
+              <h2 className="text-3xl font-extrabold tracking-tight text-[#20372a] sm:text-4xl">What’s happening next</h2>
+            </div>
+            <Link to="/events" className="inline-flex items-center gap-2 font-semibold text-[#24623b] transition hover:text-[#17482c]">
+              All events <FiArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+
+          {featuredEvent ? (
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55 }}
+              className="grid overflow-hidden rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] shadow-[0_20px_60px_rgba(18,50,31,0.10)] md:grid-cols-[0.95fr_1.05fr]"
+            >
+              <div className="relative min-h-64 md:min-h-[25rem]">
+                <img src={featuredEvent.image} alt={featuredEvent.title} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071b12]/65 via-transparent to-transparent md:bg-gradient-to-r" />
+                <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-[#17482c]/85 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur sm:left-7 sm:top-7">
+                  <span className="h-2 w-2 rounded-full bg-[#a2df72]" />
+                  Upcoming event
+                </span>
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-12">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#548545]">{featuredEvent.organizer}</p>
+                <h3 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-[#20372a] sm:text-4xl">{featuredEvent.title}</h3>
+                <p className="mt-4 max-w-xl leading-7 text-[#66756b]">{featuredEvent.description}</p>
+                <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#3d5144]">
+                  {featuredEvent.date && <span className="inline-flex items-center gap-2"><FiCalendar className="text-[#548545]" aria-hidden="true" />{featuredEvent.date}</span>}
+                  {featuredEvent.time && <span className="inline-flex items-center gap-2"><FiClock className="text-[#548545]" aria-hidden="true" />{featuredEvent.time}</span>}
+                  {featuredEvent.location && <span className="inline-flex items-center gap-2"><FiMapPin className="text-[#548545]" aria-hidden="true" />{featuredEvent.location}</span>}
+                </div>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  {featuredEvent.link ? (
+                    <Button href={featuredEvent.link} target="_blank" rel="noreferrer" className="gap-2 !rounded-full !px-7">
+                      Register now <FiArrowRight aria-hidden="true" />
+                    </Button>
+                  ) : (
+                    <span className="inline-flex items-center rounded-full bg-[#e8efe5] px-5 py-3 font-semibold text-[#45634c]">Registration details coming soon</span>
+                  )}
+                  <Link to="/events" className="inline-flex items-center justify-center rounded-full border border-[#cddbcc] px-6 py-3 font-semibold text-[#31523a] transition hover:bg-white">
+                    Event details
+                  </Link>
+                </div>
+              </div>
+            </motion.article>
+          ) : (
+            <div className="rounded-[1.75rem] border border-[#e6eee7] bg-[#f6f9f4] px-6 py-12 text-center sm:px-10">
+              <p className="text-xl font-bold text-[#20372a]">No upcoming events just yet</p>
+              <p className="mx-auto mt-2 max-w-lg text-[#66756b]">We’re planning what’s next. Visit the events page to explore our past activities and check back for new announcements.</p>
+              <Link to="/events" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#215d39] px-6 py-3 font-semibold text-white transition hover:bg-[#17482c]">
+                Browse events <FiArrowRight aria-hidden="true" />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
