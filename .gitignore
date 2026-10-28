@@ -4,3 +4,8 @@
 .agents/
 .claude/
 skills-lock.json
+
+# Local source checkout for Universal Agent Skills
+.skillset-source/
+.anim-tools/
+.anim-assets/
