@@ -40,5 +40,11 @@
     "src": "/gallery/quiz2026.webp",
     "alt": "Quiz Competition",
     "category": "Competitions"
+  },
+  {
+    "id": 8,
+    "src": "/gallery/191.webp",
+    "alt": "NIT Silchar ranked 191st in UI Green Metric 2025",
+    "category": "Achievements"
   }
 ]
