@@ -172,7 +172,7 @@ export default function HomePage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#548545]">{featuredEvent.organizer}</p>
                 <h3 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-[#20372a] sm:text-4xl">{featuredEvent.title}</h3>
                 <p className="mt-4 max-w-xl leading-7 text-[#66756b]">{featuredEvent.description}</p>
-                <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#3d5144]">
+                <div className="home-featured-event-meta mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#3d5144]">
                   {featuredEvent.date && <span className="inline-flex items-center gap-2"><FiCalendar className="text-[#548545]" aria-hidden="true" />{featuredEvent.date}</span>}
                   {featuredEvent.time && <span className="inline-flex items-center gap-2"><FiClock className="text-[#548545]" aria-hidden="true" />{featuredEvent.time}</span>}
                   {featuredEvent.location && <span className="inline-flex items-center gap-2"><FiMapPin className="text-[#548545]" aria-hidden="true" />{featuredEvent.location}</span>}
