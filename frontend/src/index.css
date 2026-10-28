@@ -11,12 +11,134 @@
     font-family: var(--font-poppins);
     background-color: #FAFAFA;
     color: #222;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 }
 
 @layer utilities {
   .text-muted {
     color: #777;
+  }
+
+  /* Theme overrides for the shared utility colors used throughout the pages. */
+  html.dark body,
+  html.dark .bg-\[\#FAFAFA\] {
+    background-color: #111916;
+    color: #F1F5F3;
+  }
+
+  html.dark .bg-white {
+    background-color: #18221E;
+  }
+
+  html.dark .text-\[\#222\] {
+    color: #F1F5F3;
+  }
+
+  html.dark .text-muted {
+    color: #B5C0BA;
+  }
+
+  html.dark .border-\[\#ECECEC\],
+  html.dark .border-custom {
+    border-color: #34443B;
+  }
+
+  html.dark .bg-\[\#222\] {
+    background-color: #0B100E;
+  }
+
+  html.dark .text-gray-300 {
+    color: #C5D0C9;
+  }
+
+  html.dark .text-gray-400 {
+    color: #A7B3AB;
+  }
+
+  html.dark input,
+  html.dark textarea,
+  html.dark select {
+    color: #F1F5F3;
+    background-color: #18221E;
+    border-color: #34443B;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: #91A097;
+  }
+
+  html.dark .shadow-soft {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+  }
+
+  html.dark .shadow-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.24);
+  }
+
+  html.dark .hover-lift:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38);
+  }
+
+  html.dark .noixorgo-background-card,
+  html.dark .noixorgo-active-card > div {
+    border-color: #34443B;
+  }
+
+  html.dark .noixorgo-carousel {
+    scrollbar-color: #3FAE5C #27352E;
+  }
+
+  html.dark .noixorgo-carousel::-webkit-scrollbar-track {
+    background: #27352E;
+  }
+
+  html.dark .merch-page {
+    background-color: #111916;
+    color: #E8F0EA;
+  }
+
+  html.dark .merch-page > section:first-of-type {
+    background-color: #0B2419;
+  }
+
+  html.dark .merch-page .merch-video {
+    background-color: #DCE8D4;
+  }
+
+  html.dark .merch-details {
+    background-color: #111916;
+  }
+
+  html.dark .merch-detail-card {
+    background-color: #18221E;
+    border-color: #34443B;
+  }
+
+  html.dark .merch-detail-icon {
+    background-color: #294733;
+    color: #B8E88C;
+  }
+
+  html.dark .merch-muted {
+    color: #B7C5BA;
+  }
+
+  html.dark .merch-fit-section {
+    background-color: #1B2A20;
+  }
+
+  html.dark .merch-fit-section > div {
+    background-color: #102E20;
+  }
+
+  html.dark .merch-fit-section a {
+    color: #B8E88C;
+  }
+
+  html.dark .merch-fit-section a:hover {
+    color: #E7F6D6;
   }
   
   .border-custom {

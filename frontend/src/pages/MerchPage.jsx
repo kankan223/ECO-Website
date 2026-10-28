@@ -29,7 +29,7 @@ export default function MerchPage() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <main className="min-h-screen bg-[#F6F4E9] pt-20 text-[#173E2B]">
+    <main className="merch-page min-h-screen bg-[#F6F4E9] pt-20 text-[#173E2B]">
       <section className="relative isolate overflow-hidden bg-[#103B29] px-6 py-16 text-white sm:py-20 lg:px-8">
         <div className="absolute -right-24 -top-32 -z-10 h-96 w-96 rounded-full bg-[#3FAE5C]/20 blur-3xl" />
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
@@ -84,7 +84,7 @@ export default function MerchPage() {
           >
             <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-[#0B251B] p-2 shadow-2xl shadow-black/30">
               <video
-                className="aspect-[4/5] w-full rounded-[1.5rem] bg-[#F6F4E9] object-cover"
+                className="merch-video aspect-[4/5] w-full rounded-[1.5rem] bg-[#F6F4E9] object-cover"
                 poster={MERCH_POSTER}
                 autoPlay={!prefersReducedMotion}
                 muted
@@ -114,12 +114,12 @@ export default function MerchPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 lg:px-8 lg:py-20">
+      <section className="merch-details px-6 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#3FAE5C]">More than a tee</p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">A wearable tribute to the wild.</h2>
-            <p className="mt-4 leading-7 text-[#5E6E61]">
+            <p className="merch-muted mt-4 leading-7 text-[#5E6E61]">
               The artwork brings together the one-horned rhino, Gee’s golden langur, the Siberian crane, native flowers, leaves and Assamese cultural motifs—all around a message of remembrance and care.
             </p>
           </div>
@@ -132,20 +132,20 @@ export default function MerchPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="rounded-3xl border border-[#DFE5D8] bg-white p-7 shadow-sm"
+                className="merch-detail-card rounded-3xl border border-[#DFE5D8] bg-white p-7 shadow-sm"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF4DD] text-2xl text-[#287447]">
+                <span className="merch-detail-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF4DD] text-2xl text-[#287447]">
                   <Icon aria-hidden="true" />
                 </span>
                 <h3 className="mt-5 text-xl font-bold">{title}</h3>
-                <p className="mt-3 leading-7 text-[#657268]">{text}</p>
+                <p className="merch-muted mt-3 leading-7 text-[#657268]">{text}</p>
               </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#E9F0DE] px-6 py-14 lg:px-8">
+      <section className="merch-fit-section bg-[#E9F0DE] px-6 py-14 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] bg-[#173E2B] px-7 py-9 text-white sm:px-10 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C7F65B]">Find your fit</p>
@@ -162,7 +162,7 @@ export default function MerchPage() {
             </div>
           </div>
         </div>
-        <p className="mx-auto mt-6 max-w-7xl text-sm text-[#657268]">
+        <p className="merch-muted mx-auto mt-6 max-w-7xl text-sm text-[#657268]">
           Keep an eye on <a className="font-semibold text-[#287447] underline underline-offset-4 hover:text-[#173E2B]" href="https://www.instagram.com/eco_club_nits" target="_blank" rel="noreferrer">@eco_club_nits</a> for the preorder announcement.
         </p>
       </section>

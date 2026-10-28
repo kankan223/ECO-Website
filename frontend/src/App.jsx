@@ -21,6 +21,18 @@ const SubmitBlogForm = lazy(() => import('./pages/SubmitBlogForm'));
 const SPLASH_SEEN_KEY = 'eco-splash-seen';
 const FIRST_VISIT_MS = 3000;
 const RETURNING_VISIT_MS = 1000;
+const THEME_KEY = 'eco-theme';
+
+function getInitialTheme() {
+  try {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme;
+  } catch {
+    // Use the system preference when storage is unavailable.
+  }
+
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +55,17 @@ function getSplashDuration() {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [splashDuration] = useState(getSplashDuration);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      // Theme still applies for the current session when storage is unavailable.
+    }
+  }, [theme]);
 
   const handleLoadingComplete = () => {
     try {
@@ -60,7 +83,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] flex flex-col">
       <ScrollToTop />
-      <Navbar />
+      <Navbar theme={theme} onThemeChange={() => setTheme((current) => (
+        current === 'dark' ? 'light' : 'dark'
+      ))} />
       
       <AnimatePresence mode="wait">
         <Suspense fallback={
