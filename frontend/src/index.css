@@ -141,6 +141,21 @@
     color: #E7F6D6;
   }
 
+  html.dark .merch-designers > div {
+    background-color: #18221E;
+    border-color: #34443B;
+    color: #E1ECE4;
+  }
+
+  html.dark .merch-designers h2 {
+    color: #E1ECE4;
+  }
+
+  html.dark .merch-designers li {
+    background-color: #294733;
+    color: #C5E9AF;
+  }
+
   html.dark .home-page {
     background-color: #111916;
   }
@@ -200,7 +215,7 @@
     color: #DCE9E0;
   }
 
-  html.dark .home-featured-event-card [class*='text-\\[\\#3d5144\\]'] {
+  html.dark .home-featured-event-meta {
     color: #D0DDD4;
   }
 
@@ -215,6 +230,28 @@
   html.dark .home-about-callout {
     background-color: rgba(24, 34, 30, 0.96);
     border-color: #34443B;
+  }
+
+  html.dark .achievement-card {
+    background-color: #18221E;
+    border: 1px solid #34443B;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  }
+
+  html.dark .achievement-card h3 {
+    color: #E6EFE9;
+  }
+
+  html.dark .achievement-card .achievement-tooltip {
+    background-color: #26352D;
+    color: #E1ECE4;
+    border: 1px solid #46594D;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.48);
+  }
+
+  html.dark .achievement-card:hover,
+  html.dark .achievement-card:focus-within {
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
   }
 
   html.dark .home-content-section {

@@ -7,6 +7,8 @@ const MERCH_REVEAL_URL = 'https://www.canva.com/design/DAHZOSUX61w/Cja8NS6KNjqsC
 const MERCH_VIDEO = '/merch/merch-reveal.mp4';
 const MERCH_POSTER = '/merch/merch-poster.jpg';
 
+const designers = ['Krishnav', 'Gitartha', 'Atikuj'];
+
 const details = [
   {
     icon: FaLeaf,
@@ -165,6 +167,20 @@ export default function MerchPage() {
         <p className="merch-muted mx-auto mt-6 max-w-7xl text-sm text-[#657268]">
           Keep an eye on <a className="font-semibold text-[#287447] underline underline-offset-4 hover:text-[#173E2B]" href="https://www.instagram.com/eco_club_nits" target="_blank" rel="noreferrer">@eco_club_nits</a> for the preorder announcement.
         </p>
+      </section>
+
+      <section className="merch-designers px-6 pb-16 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-3xl border border-[#DFE5D8] bg-white px-6 py-8 text-center shadow-sm sm:px-10">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#548545]">Made with care</p>
+          <h2 className="mt-2 text-2xl font-extrabold text-[#173E2B]">Designers</h2>
+          <ul className="mt-5 flex flex-wrap justify-center gap-3">
+            {designers.map((designer) => (
+              <li key={designer} className="rounded-full bg-[#EAF4DD] px-5 py-2 font-semibold text-[#287447]">
+                {designer}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </main>
   );

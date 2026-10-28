@@ -7,16 +7,18 @@ import eventsData from '../data/events.json';
 import { withEventStatus } from '../utils/eventStatus';
 
 const eventsWithStatus = eventsData.map((event) => withEventStatus(event));
-const filters = ['All', 'Upcoming', 'Ongoing', 'Past'];
+const filters = ['Upcoming', 'Past'];
 
 export default function EventsPage() {
   const [activeFilter, setActiveFilter] = useState(
-    eventsWithStatus.some((event) => event.status === 'upcoming') ? 'Upcoming' : 'All'
+    eventsWithStatus.some((event) => event.status !== 'past') ? 'Upcoming' : 'Past'
   );
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredEvents = eventsWithStatus.filter(event => {
-    const matchesFilter = activeFilter.toLowerCase() === 'all' || event.status === activeFilter.toLowerCase();
+    const matchesFilter = activeFilter === 'Upcoming'
+      ? event.status !== 'past'
+      : event.status === 'past';
     const matchesSearch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          event.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;
