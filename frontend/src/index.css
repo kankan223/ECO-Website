@@ -205,6 +205,15 @@
   html.dark .home-page .bg-\[\#F1F7F0\] {
     background-color: #17231D;
   }
+
+  /* Keep the hero badge and secondary CTA transparent on every slide and theme. */
+  .home-hero-glass,
+  .home-hero-glass:hover,
+  .home-hero-glass:focus,
+  .home-hero-glass:active {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
   
   .border-custom {
     border-color: #ECECEC;

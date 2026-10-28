@@ -90,7 +90,7 @@ export default function HomePage() {
                     className="mx-auto w-full max-w-7xl text-white"
                   >
                     <div className="max-w-3xl">
-                      <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm sm:text-sm">
+                      <span className="home-hero-glass mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white sm:text-sm">
                         <span className="h-2 w-2 rounded-full bg-[#91d65c]" />
                         NIT Silchar · Eco Club
                       </span>
@@ -107,7 +107,7 @@ export default function HomePage() {
                         </Button>
                         <Link
                           to="/noixorgo"
-                          className="inline-flex items-center justify-center rounded-full border border-white/55 bg-white/10 px-7 py-4 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                          className="home-hero-glass inline-flex items-center justify-center rounded-full border border-white/55 px-7 py-4 font-semibold text-white transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                         >
                           Discover our work
                         </Link>
