@@ -57,7 +57,7 @@ export default function HomePage() {
   const upcomingEvents = eventsData.filter(e => e.status === 'upcoming');
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA]">
+    <div className="home-page min-h-screen bg-[#FAFAFA]">
       {/* Hero Section */}
       <section className="relative h-[min(88vh,850px)] min-h-[620px] overflow-hidden bg-[#10291d] max-md:min-h-[620px]">
         <Swiper
@@ -122,7 +122,7 @@ export default function HomePage() {
       </section>
 
       {/* Campus impact strip */}
-      <section className="relative z-10 mx-auto -mt-8 w-[calc(100%-2rem)] max-w-6xl rounded-2xl border border-[#e6eee7] bg-white px-5 py-6 shadow-[0_18px_50px_rgba(18,50,31,0.12)] sm:px-8 lg:px-12">
+      <section className="home-impact-strip relative z-10 mx-auto -mt-8 w-[calc(100%-2rem)] max-w-6xl rounded-2xl border border-[#e6eee7] bg-white px-5 py-6 shadow-[0_18px_50px_rgba(18,50,31,0.12)] sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-5 text-center sm:grid-cols-3 sm:divide-x sm:divide-[#e6eee7]">
           <div className="px-3">
             <p className="text-2xl font-extrabold tracking-tight text-[#24623b] sm:text-3xl">166th</p>
@@ -140,7 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="bg-[#f5f8f3] px-6 py-20 lg:px-8 lg:py-28">
+      <section ref={aboutRef} className="home-about bg-[#f5f8f3] px-6 py-20 lg:px-8 lg:py-28">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
@@ -155,7 +155,7 @@ export default function HomePage() {
               loading="lazy"
               className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[0_24px_60px_rgba(18,50,31,0.18)]"
             />
-            <div className="absolute -bottom-5 right-4 max-w-[17rem] rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl backdrop-blur sm:right-[-1.5rem] sm:p-5">
+            <div className="home-about-callout absolute -bottom-5 right-4 max-w-[17rem] rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl backdrop-blur sm:right-[-1.5rem] sm:p-5">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#548545]">Rooted in action</p>
               <p className="mt-1 text-sm font-semibold leading-5 text-[#20372a] sm:text-base">Small steps today. A healthier campus tomorrow.</p>
             </div>
@@ -254,7 +254,7 @@ export default function HomePage() {
 
 
       {/* Achievements Section */}
-      <section ref={achievementsRef} className="py-20 px-6 lg:px-8">
+      <section ref={achievementsRef} className="home-content-section py-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title="Our Achievements"
@@ -290,7 +290,7 @@ export default function HomePage() {
       
 
       {/* Upcoming Events Section */}
-      <section ref={eventsRef} className="py-20 px-6 lg:px-8">
+      <section ref={eventsRef} className="home-content-section py-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title="Upcoming Events"
@@ -321,7 +321,7 @@ export default function HomePage() {
                 ))}
               </Swiper>
             ) : (
-              <div className="rounded-2xl bg-white shadow-card px-6 py-12 text-center">
+              <div className="home-empty-events rounded-2xl bg-white shadow-card px-6 py-12 text-center">
                 <p className="text-xl font-semibold text-[#222]">No upcoming events right now</p>
                 <p className="mt-2 text-muted">We are busy planning the next one. Browse everything that has happened so far.</p>
                 <Link
@@ -337,7 +337,7 @@ export default function HomePage() {
       </section>
 
       {/* Blog Section */}
-      <section ref={blogRef} className="py-20 px-6 lg:px-8 bg-white">
+      <section ref={blogRef} className="home-blog-section py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             title="From Our Blog"

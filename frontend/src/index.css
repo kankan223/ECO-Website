@@ -140,6 +140,71 @@
   html.dark .merch-fit-section a:hover {
     color: #E7F6D6;
   }
+
+  html.dark .home-page {
+    background-color: #111916;
+  }
+
+  html.dark .home-impact-strip {
+    background-color: #18221E;
+    border-color: #34443B;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  html.dark .home-impact-strip [class*='divide-'] {
+    border-color: #34443B;
+  }
+
+  html.dark .home-impact-strip p:first-child {
+    color: #A9E58A;
+  }
+
+  html.dark .home-impact-strip p:last-child {
+    color: #B5C0BA;
+  }
+
+  html.dark .home-about {
+    background-color: #17231D;
+  }
+
+  html.dark .home-about-callout {
+    background-color: rgba(24, 34, 30, 0.96);
+    border-color: #34443B;
+  }
+
+  html.dark .home-content-section {
+    background-color: #111916;
+  }
+
+  html.dark .home-empty-events,
+  html.dark .home-blog-section {
+    background-color: #18221E;
+  }
+
+  html.dark .home-page .text-\[\#20372a\],
+  html.dark .home-page .text-\[\#334b3b\],
+  html.dark .home-page .text-\[\#245638\] {
+    color: #E1ECE4;
+  }
+
+  html.dark .home-page .text-\[\#66756b\],
+  html.dark .home-page .text-gray-600 {
+    color: #B5C0BA;
+  }
+
+  html.dark .home-page .text-\[\#548545\],
+  html.dark .home-page .text-\[\#26734D\] {
+    color: #A9E58A;
+  }
+
+  html.dark .home-page .border-\[\#e6eee7\] {
+    border-color: #34443B;
+  }
+
+  html.dark .home-page .bg-\[\#f5f8f3\],
+  html.dark .home-page .bg-\[\#F1F7F0\] {
+    background-color: #17231D;
+  }
   
   .border-custom {
     border-color: #ECECEC;
